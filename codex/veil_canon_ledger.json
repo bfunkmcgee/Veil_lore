@@ -1,0 +1,5106 @@
+{
+  "meta": {
+    "title": "Veil Canon Ledger",
+    "canon_tags": {
+      "C": "Canon — established in the source archive or ratified by ruling",
+      "G": "Game State — true within the game layer only",
+      "D": "Dossier Candidate — awaiting reconciliation",
+      "P": "Proposed — not yet incorporated",
+      "X": "Conflict — resolved per ruling (see rulings[])",
+      "R": "Ratified — created/approved during the August 2026 reconciliation",
+      "?": "Unfiled — permanently unexplained by ruling MY1; no patron, no class, no pending theory; explanation proposals declined, including from the world's authors"
+    },
+    "calendars": {
+      "AV": {
+        "name": "Anno of the Crowning",
+        "epoch": "Coronation of Anharas Il'Rien",
+        "historicity": "true history"
+      },
+      "DE": {
+        "name": "Divine Era",
+        "epoch": "Purported founding of the Silent Rose",
+        "conversion": "none by design — deliberately compressed by Crown chroniclers",
+        "historicity": "falsified public history"
+      }
+    },
+    "canon_precedence": [
+      {
+        "rank": 1,
+        "source": "rulings",
+        "scope": "all",
+        "rule": "highest sequence governs"
+      },
+      {
+        "rank": 2,
+        "source": "scenes",
+        "scope": "interior_state",
+        "rule": "dramatized canon governs character interiority only"
+      },
+      {
+        "rank": 3,
+        "source": "doctrine_and_event_records",
+        "scope": "external_and_metaphysical_fact"
+      },
+      {
+        "rank": 4,
+        "source": "merged_source_prose",
+        "scope": "default"
+      },
+      {
+        "rank": 5,
+        "source": "R4",
+        "scope": "same_generation_wording_only"
+      }
+    ],
+    "architecture": {
+      "model": "canonical source set (not single-source)",
+      "authoritative_sources": [
+        "Veil_Unified_World_Bible.md (world/reference)",
+        "veil_canon_ledger.json (structured canon)",
+        "Veil_Scenes.md (dramatized narrative)"
+      ],
+      "generated_targets": [
+        "Veil_Core_World_Bible.md/.docx",
+        "Veil_Operational_Annexes.md/.docx",
+        "Veil_Scenes.docx"
+      ],
+      "note": "Core and Annex are mechanically derived from the master and verified fresh by harness.py"
+    },
+    "schema_notes": {
+      "tag": "DEPRECATED generated display text — software MUST NOT reason from this field; use status.*",
+      "rulings_legacy_strings": "DEPRECATED — use rulings_log",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "D",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "unfiled": "MANDATORY in canon-state status objects; false unless [?] Unfiled",
+      "semantic_status_fields": "lifecycle_status / containment_status / provenance_status / development_status / historicity are domain fields, NOT canon-state; never validated as status objects",
+      "ref": "Cross-reference to a canonical entity id; only canonical collections use `id`",
+      "sequence": "Authoritative ruling order; 'latest ruling' = highest sequence, not array position",
+      "kind": "canon | continuity | narrative | integration | build | engineering | editorial | provisional",
+      "derived_fields": "latest_ruling_sequence and engineering_revision are DERIVED by build.py from rulings_log — never hand-edit"
+    },
+    "collection_roles": {
+      "events_timeline": "AUTHORITATIVE canonical chronology, generated from Appendix A",
+      "events_annotated": "curated narrative index (non-authoritative)"
+    },
+    "canon_edition": "Second Reconciled Edition",
+    "canon_revision": "CR3",
+    "build_revision": "CR2.1",
+    "narrative_revision": "NF2",
+    "harness": {
+      "tiers": {
+        "invariants": "BLOCKING — structural, schema, and ruled-canon regressions",
+        "lint": "NON-BLOCKING — editorial phrasing watches"
+      },
+      "rationale": "Build correctness and story quality must not share a test"
+    },
+    "engineering_revision": "RM5",
+    "latest_ruling_sequence": 59
+  },
+  "cosmology": {
+    "tiers": [
+      {
+        "id": "the-source",
+        "tier": 1,
+        "name": "The Source",
+        "tag": "C",
+        "aka": [
+          "The Highest God (local theological name)"
+        ],
+        "summary": "Supreme being of the Cosmic Order; speaker of Mos Dof Anelcia; author of the Lattice. Incarnated in the Veil world as Anharas Il'Rien via Embodied Resonance.",
+        "sources": [
+          "unified_cosmic_order_lore_bible",
+          "ruling C2"
+        ],
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "C",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "id": "the-architect",
+        "tier": 2,
+        "name": "The Architect",
+        "tag": "C",
+        "summary": "Greatest of the First Shapers; steward of the Veil world's lattice; creator and banisher of the Old Gods.",
+        "sources": [
+          "Veil Codex Vol I",
+          "ruling C2"
+        ],
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "C",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "id": "old-gods",
+        "tier": 3,
+        "name": "The Eight Cast-Out Old Gods",
+        "tag": "C/R",
+        "summary": "Eight sub-shapers, each steward of one dimension of the Song; rebelled ~30,000 B.A.V.",
+        "sources": [
+          "Veil Codex Vol I",
+          "ruling OG1"
+        ],
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      }
+    ],
+    "old_gods": [
+      {
+        "id": "orra-vel",
+        "name": "Orra-Vel",
+        "title": "The Voice We Were Denied",
+        "tag": "C",
+        "resonance": "Utterance",
+        "creation": "Language and mortal minds",
+        "sin": "Envy",
+        "sigil": "Open mouth inverted, tongue as severed clef",
+        "hazard": "Subharmonic drift; propagates through decoded speech",
+        "interlocks": [
+          "Echo Fragment 0-A"
+        ],
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "C",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "id": "threnn-vel",
+        "name": "Threnn-Vel",
+        "title": "The Meter That Would Not Turn",
+        "tag": "R",
+        "resonance": "Rhythm",
+        "creation": "Time, seasons, heartbeats",
+        "sin": "Sloth (arrest)",
+        "sigil": "Metronome with no pivot",
+        "hazard": "Temporal loops, early echoes",
+        "interlocks": [
+          "Infinite North time fractures"
+        ],
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "id": "shai-vel",
+        "name": "Shai-Vel",
+        "title": "The Chord That Would Not Release",
+        "tag": "R",
+        "resonance": "Harmony",
+        "creation": "Bonds, love, gravity, community",
+        "sin": "Lust as possession",
+        "sigil": "Two interlocked rings crushed into one ellipse",
+        "hazard": "Enforced-union cults; personality merges",
+        "interlocks": [
+          "Mirrorglade 3 recursion (EN-IV-M3)"
+        ],
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "id": "sael-vel",
+        "name": "Sael-Vel",
+        "title": "The Line That Strayed",
+        "tag": "R",
+        "resonance": "Melody",
+        "creation": "Paths, rivers, destiny",
+        "sin": "Pride",
+        "sigil": "Stave whose line departs the staff",
+        "hazard": "Prophecy corruption — self-fulfilling futures",
+        "interlocks": [],
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "id": "mhor-vel",
+        "name": "Mhor-Vel",
+        "title": "The Rest That Devours",
+        "tag": "R",
+        "resonance": "Silence",
+        "creation": "Endings, death, rest",
+        "sin": "Gluttony",
+        "sigil": "Fermata swallowing its own dot",
+        "hazard": "Acoustic null zones; unmaking",
+        "interlocks": [
+          "Seraphim Zero (possible invocation)",
+          "Glass Wound"
+        ],
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "id": "rhen-vel",
+        "name": "Rhen-Vel",
+        "title": "The Answer That Lied",
+        "tag": "R",
+        "resonance": "Echo",
+        "creation": "Memory, history, ancestry",
+        "sin": "Deceit",
+        "sigil": "Two facing waves, mismatched",
+        "hazard": "False-memory contagion",
+        "interlocks": [
+          "Entity Echo (name question, unminuted)"
+        ],
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "id": "ghaur-vel",
+        "name": "Ghaur-Vel",
+        "title": "The Crescendo Unending",
+        "tag": "R",
+        "resonance": "Amplitude",
+        "creation": "Storms, fire, might of matter",
+        "sin": "Wrath",
+        "sigil": "Crescendo hairpin that never closes",
+        "hazard": "Self-amplifying cascade events",
+        "interlocks": [
+          "Scarlet doctrine: never counter-sing"
+        ],
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "id": "vess-vel",
+        "name": "Vess-Vel",
+        "title": "The Thousand-Throated",
+        "tag": "R",
+        "resonance": "Timbre",
+        "creation": "Flesh, form, distinctness of species",
+        "sin": "Covetous theft of forms",
+        "sigil": "Eight overlapping silhouettes sharing one throat",
+        "hazard": "Chimeric flesh — origin of monsters",
+        "interlocks": [
+          "Unmaking of the First Monster (Vol I Ch 2.5)"
+        ],
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      }
+    ],
+    "empty_choir": {
+      "id": "empty-choir",
+      "tag": "R",
+      "ruling": "EC1",
+      "doctrine": "No successor stewards after the casting-out. The First Verse (A.V. 450) is creation's standing stewardship ordinance; the Crown glyph is its anchor and interface; each King's anointment renews its executing authority ('the cycle'). The Twelve Shepherds are its tuners.",
+      "modern_crisis": "Verse aged 1,875 years; the Eight probe its edges; the A.V. 2325 glyph hesitation was approach to authority-failure; Echo amended the Verse with a new note.",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "question": {
+        "status": "resolved",
+        "resolution": "RESOLVED by AR1 — see threats/the-concord",
+        "ruling": "AR1"
+      }
+    },
+    "echo_wound": {
+      "tag": "R",
+      "ruling": "CR1",
+      "doctrine": "Anharas sang incompletely, not falsely; Incarnation means accepting embodied limitation; the Wound is why the Twelve exist",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    "irregular_cycle": {
+      "tag": "R",
+      "ruling": "CR1",
+      "doctrine": "Early renewal cycles ~250 years; intervals shortening/irregularizing = measurable Verse decay; 2325 hesitation as terminal data point",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    "two_crowns": {
+      "tag": "R",
+      "ruling": "CR3",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "doctrine": "The glyph declares the Verse requires renewed embodied authority — not the King's death. A.V. 2325 is unprecedented: renewal called while Osric lives. Osric = civil King; Echo = metaphysical bearer. A constitutional and theological catastrophe with no statute or precedent."
+    }
+  },
+  "figures": [
+    {
+      "id": "anharas-ilrien",
+      "name": "Anharas Il'Rien",
+      "tag": "C",
+      "role": "The Mortal Anointed; First King",
+      "era": "~50 B.A.V. – A.V. 450 (vanished)",
+      "notes": "Incarnation of the Source; sang the First Verse; public history's 'Aurelion I the Radiant' is his propaganda shadow (ruling C1).",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "twelve-shepherds",
+      "name": "The Twelve Shepherds",
+      "tag": "C/R",
+      "role": "First harmonic containment; interpreters",
+      "members_named": "see shepherds{} — roster completed per ruling EC1",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "thalen-mirecourt",
+      "name": "Thalen Mirecourt",
+      "tag": "C/X→R",
+      "role": "Shepherd; in modern era 'Lord Thalen Mirecourt, Vizier of Shadows'",
+      "ruling": "P2 (provisional): Shepherd and Vizier are the same being",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "caer-vornis",
+      "name": "Caer Vornis",
+      "tag": "C",
+      "role": "Last Grandmaster of the Silent Rose; bearer of the Thornblade; initiator of the Tribunal Compact",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "halver-dravane",
+      "name": "Ser Halver Dravane",
+      "tag": "C",
+      "role": "Bone-Warder of Dereth; author of the Siege of Thorns; father of Inverse Resonance heresy",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "maris-green-handed",
+      "name": "Queen Maris the Green-Handed",
+      "tag": "C",
+      "role": "Namesake and charter-author of the Queen's Garden",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "grathul-mokhtar",
+      "name": "Grathul Mokh'tar",
+      "tag": "C",
+      "role": "Unifier of the Caliphate of Iron Roots",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "kael-tharanis",
+      "name": "Kael Tharanis",
+      "tag": "C",
+      "codename": "Scion Echo",
+      "role": "Scarlet Inquisition defector; ascended in the Wound; the Concord's mortal conductor — the Ninth Chair (ruling AR1)",
+      "open": "Fate at climax unruled: death or severance",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "philosophy": "Stewardship is the original sin — scar tissue over grief; the Eight offered abolition of stewardship, delivered authorship (CR1)"
+    },
+    {
+      "id": "felia-wynshade",
+      "name": "Felia Wynshade (Saint Felia)",
+      "tag": "C/D/G",
+      "role": "Veil assassin → living saint → founder of the Order of the Open Rose",
+      "game_state": "Level 2, XP 55/200 — full sheet in the Operational Annexes (Whispers Campaign Codex)",
+      "arc": "Taken by the Veil at 3; compartmentalized psyche; awakening as discovery of choice; awareness-not-redemption; concludes the Listening War and Echo's story; ordained Saint Felia; founds the Open Rose in her mid-thirties (rulings TR3–TR5)",
+      "signature": "Unrestrained donkey-like laugh; 'They told me I was the knife. No one said the knife remembers.'",
+      "ages": {
+        "arc1": 22,
+        "arc2": "mid-30s",
+        "arc3": "centuries hence"
+      },
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "D",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "scars": [
+        "The names never stop — silence lost forever (CR1)",
+        "Four contested sainthoods (Crown/Church/Veil/her own)"
+      ],
+      "class": "Ascended (Directive 17-Singularity)"
+    },
+    {
+      "id": "serin-veyra",
+      "name": "Serin Veyra",
+      "tag": "C/D — P1 reinforced",
+      "role": "Raven archivist; Division 13 handler; Felia's handler and mother-figure from age 3",
+      "ruling": "P1 (provisional): game-state 'Serin Valenne' = cover surname",
+      "arc": "Mirrored awakening — 'the blade and the handle'; the origami bird; Perch charm bracelet; awakening with Ansel Varet; seagull laugh; sisterhood with Felia (platonic, ruled)",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "D",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "arc1_beat": "Falsified Felia's Division 13 irregularity screening — first betrayal of office for love (CR1)"
+    },
+    {
+      "id": "echo",
+      "name": "Echo",
+      "tag": "C",
+      "role": "Child of A.V. 2325; resang the First Verse with a new note; crowned without anointment",
+      "arc_hinge": "Resolves to unsing herself; Felia refuses the trade",
+      "voice_document": "RAV-A0-V6-007 (Book IV.3) — interview fragments (questions struck) + copybook marginalia, preserved by Nareth against standing order",
+      "voice_canon": [
+        "'The crown is heavier from inside' — remembers crownings from both sides",
+        "Thanked Kethivar — the first thanks in centuries",
+        "The unwritten taught her names, not a weapon; the note is the names",
+        "Unsinging framed as: 'do they stop being counted?'",
+        "Rhen-Vel question in her framing: 'sometimes it's the same coat' — unresolved",
+        "The Listening War named: 'the song isn't breaking — it's being listened to'",
+        "Final fragment: Felia's refusal, from her side"
+      ],
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "question": {
+        "status": "resolved",
+        "resolution": {
+          "ruling": "AR1",
+          "summary": "note taught by the unwritten — testimony and breach in one; her post-saga road unwritten"
+        }
+      }
+    },
+    {
+      "id": "ansel-varet",
+      "name": "Ansel Varet",
+      "tag": "R",
+      "role": "Luthier; symphony instrument repairer; Serin's awakening",
+      "theme": "Control as resonance, not rigidity",
+      "lineage_hook": "[P] possible descendant of Archivist Jonn Varé",
+      "rulings": [
+        "TR6"
+      ],
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "own_war": {
+        "ruling": "NF1",
+        "conflict": "Glassline harmonic synthesis replacing the Eclipsera symphony; argues against perfection, not synthesis; losing publicly",
+        "apprentice": "Wren Callis (14) — better than he was, believes in synthesis",
+        "note": "Not at leisure to fix Serin; half her learning is watching him lose",
+        "philosophy": "Agency is sacred, not imperfection (NF2) — 'When the system gets perfect enough, we stop noticing who made the choices.' Wren is genuinely right about synthesis: symphonies in poor districts, ruined hands performing, dying scores preserved."
+      }
+    },
+    {
+      "id": "tobbin-fenn",
+      "name": "Tobbin Fenn",
+      "tag": "R",
+      "role": "Office clerk → Crown Territorial Levy soldier → Felia's Arc II companion",
+      "fate": "Dies suddenly on routine patrol — no plot armor",
+      "legacy": "The Sunrise Knight (unfinished play); folk name of the Sunrise Knights",
+      "rulings": [
+        "TR5",
+        "TR6"
+      ],
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "ruling_nf1": {
+        "play_origin": "The Sunrise Knight predates Felia; originally about his father, a northern-quarantine veteran who never spoke of it; the knight silently becomes a woman",
+        "consequential_choice": "Publicly argues Felia out of the Halloway contract — the act defensible, the precedent not ('we're a government nobody elected'); the Rose declines and people die anyway; produces the sleep-on-it rule",
+        "function": "The only person who met Saint Felia first and Felia second, and chose the second (Serin, who knew her at three, never had to choose)"
+      },
+      "scenes": [
+        "scene-02-the-halloway-contract"
+      ]
+    },
+    {
+      "id": "rodar-akai",
+      "name": "Rodar Akai",
+      "tag": "C",
+      "ruling": "KC1, amended KC4",
+      "role": "Human conscript; squad leader, Kestrel Squad, Accord Ranger Program; protagonist of SANDLINE",
+      "arc": "Loud boot → quiet contact survivor → reluctant leader; promotion lands after the shell cracks",
+      "age": 20,
+      "era": "~A.V. 2325–2326",
+      "sprite": "rodar_sprite.png (south-facing, provided by author)",
+      "kit": "Pattern 71-C expeditionary issue; sand cloak over Crown olive",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "unreadability": {
+        "ruling": "NF1",
+        "mechanism": "Tracks DIVERGENCE, not virtue (NF2): compassion, unexpected tactics, trusting the distrusted, refusing moral acts for private reasons, ceding command, selective rule-keeping. The True Line fails because he is hard to model.",
+        "player_generated": true,
+        "if_played_by_the_manual": "The river reads him; the finale is harder and darker",
+        "doctrinal_route": "Read by the river, but better supplied, better coordinated, and able to exploit the prophecy — no dominant good-person build"
+      },
+      "born": "~A.V. 2305",
+      "civilian_occupation": "Warehouse hand, Dray Cross freight yards (two years)",
+      "hometown": "dray-cross",
+      "temperament": "Boot at induction — wanted the letter; abrasive in speech, decent in deed; the war strips the speech and leaves the deed",
+      "warehouse_thread": "Act IV: reads the Mattock crates as a dock hand — the absence of a paper trail IS the evidence; clean docks do not exist"
+    },
+    {
+      "id": "ottla-brimm",
+      "name": "Matriarch Ottla Brimm",
+      "tag": "R",
+      "role": "Leader, Assembly of Wells (insurgency political wing)",
+      "ruling": "KC2",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "vrikka-half-well",
+      "name": "Warleader Vrikka Half-Well",
+      "tag": "R",
+      "role": "Leader, the Thirst (insurgency radical wing); conducted by the Riverspoken",
+      "ruling": "KC2",
+      "open": "Severance — Act V hardest optional outcome",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "the-cartographer",
+      "name": "The Cartographer",
+      "tag": "R",
+      "role": "Head of the Riverspoken; elderly desert elf ex-survey-master",
+      "ruling": "KC2",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "osric-iii",
+      "name": "King Osric III of House Danterre",
+      "tag": "R",
+      "role": "Sitting King of the Whispers era",
+      "ruling": "CV1",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "aurel-strand",
+      "name": "First Minister Aurel Strand",
+      "tag": "R",
+      "role": "Worldly War's definitive human antagonist; author of the Northwall Edicts and Open Hand Compacts; Accord eminent-domain signature",
+      "note": "No god touches him — that is the point",
+      "ruling": "CV1",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "lys-nareth",
+      "name": "Archivist-Prime Lys Nareth",
+      "tag": "C/R",
+      "role": "Head of the Order of the Raven; RAV files signature; keeper of the Census question",
+      "ruling": "CV1",
+      "note": "Preserved Echo's writings against standing order: 'Standing order may take it up with me.'",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "cathal-dray",
+      "name": "Rose-Marshal Cathal Dray",
+      "tag": "R",
+      "role": "Head, Steel Roses",
+      "ruling": "CV1",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "idra-solt",
+      "name": "High Inquisitor Idra Solt",
+      "tag": "R",
+      "role": "Head, Scarlet Inquisition; carries Lament's chaplaincy rotation",
+      "ruling": "CV1",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "wilhelmina-pryce",
+      "name": "Mother Wilhelmina Pryce",
+      "tag": "R",
+      "role": "Head Gardener, Queen's Garden",
+      "ruling": "CV1",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "corbel-nash",
+      "name": "Warden Corbel Nash",
+      "tag": "R",
+      "role": "Warden, Division 13; Corven Sayle reports to him",
+      "ruling": "CV1",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "ruling_cr2": {
+        "function": "Silence is policy — Division 13 collects deviations rather than pruning them",
+        "motive": {
+          "status": "open",
+          "sanctioned_readings": [
+            "leverage",
+            "quiet dissent from Ascension doctrine",
+            "something in his own file"
+          ]
+        }
+      }
+    },
+    {
+      "id": "denner",
+      "name": "Denner",
+      "tag": "R",
+      "role": "Echo's guard; brings winter apples 'from nobody'",
+      "ruling": "EV1",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "cale-varin",
+      "name": "Cale Varin",
+      "tag": "C",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "role": "Witness to the First Hundred; first Grandmaster of the Steel Roses; codifier of the Tribunal Compact; author of the Ethics of Severance (A.V. 579)",
+      "ruling": "CR1"
+    },
+    {
+      "id": "wren-callis",
+      "name": "Wren Callis",
+      "tag": "R",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "role": "Ansel Varet's apprentice; pro-synthesis",
+      "ruling": "NF1"
+    },
+    {
+      "id": "maera-sill",
+      "name": "Maera Sill",
+      "tag": "R",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "D",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "role": "Arc III protagonist; young Open Rose knight troubled that the Rule works better than it means",
+      "ruling": "NF1",
+      "stake": "Survived the Harrow Winter on Compact bread; took her oath in a hall the Compact heated. Correcting doctrine attacks what kept her alive."
+    },
+    {
+      "id": "corbin-ost",
+      "name": "Corbin Ost",
+      "tag": "R",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "D",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "role": "Glassline archivist with MIGRATION AUTHORITY — eleven years deleting mistakes, variants, and annotations; the dead Rite is partly his work",
+      "ruling": "NF1",
+      "lineage": "Fen Ost — inherits an instrument case of deliberately kept flawed recordings, including a cantor who cried partway through a name (lineage pays its way, NF2)"
+    },
+    {
+      "id": "vethra-sollin",
+      "name": "Liaison-Captain Vethra Sollin",
+      "tag": "R",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "role": "Elven Ranger liaison whose A.V. 2319 objection to the Vine manual's species doctrine stands unwithdrawn",
+      "ruling": "IA1"
+    },
+    {
+      "id": "josen-marr",
+      "name": "Josen Marr",
+      "tag": "R",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "role": "Kestrel Squad pointman and rifleman; the best pure infantryman in the company, privately afraid of how naturally it comes",
+      "counterweight": "Holds the drill against Rodar's instinct in Act III",
+      "ruling": "NF2",
+      "design_axis": "With Rodar: desire without gift vs gift without desire (KC4)"
+    },
+    {
+      "id": "anneke-roud",
+      "name": "Anneke Roud",
+      "tag": "R",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "role": "Miller's widow of Pellhurst Province; travelled eleven days to petition the Open Rose over the Halloway tariff",
+      "ruling": "SC2"
+    },
+    {
+      "id": "denning-halloway",
+      "name": "Governor Denning Halloway",
+      "tag": "R",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "role": "Provincial Governor of Pellhurst; the tariff contract the Open Rose declined; held office two further years",
+      "ruling": "SC2"
+    },
+    {
+      "id": "corren-vey",
+      "name": "Corren Vey",
+      "tag": "C",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "role": "Division 13 field agent; dislikes the orange coats",
+      "ruling": "QT1"
+    },
+    {
+      "id": "mara-sen",
+      "name": "Mara Sen",
+      "tag": "C",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "role": "Queen's Garden medical bureau; brought forty sandwiches to an operation",
+      "ruling": "QT1"
+    },
+    {
+      "id": "aven-draal",
+      "name": "Aven Draal",
+      "tag": "C",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "role": "Raven Listener; ended the Almoner with one tone, and broke a cup with a brick",
+      "ruling": "QT1"
+    },
+    {
+      "id": "edrin-vale",
+      "name": "Patrolman Edrin Vale",
+      "tag": "C",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "role": "Eclipsera Constabulary; filed the report that ceased to exist at 03:41",
+      "ruling": "QT1"
+    },
+    {
+      "id": "emrys-ashcombe",
+      "name": "Inspector Emrys Ashcombe",
+      "tag": "C",
+      "ruling": "KC5",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "species": "elf",
+      "age": 214,
+      "role": "Eclipsera Constabulary inspector (41 years, 12 in serious crimes), conscripted under the Levy and seconded to the Accord Ranger Program as Field Intelligence Officer; attached to Kestrel Squad",
+      "method": "Patient direct conversation with civil populations; no threat, no bargain, forty years deep",
+      "design_edge": "The skill that humanises the enemy is the skill that finds him. He does not make killing avoidable; he makes it informed.",
+      "frictions": {
+        "sillae-vekh": "She gets truth because she belongs; he gets it because he is good at it. 'You're doing to my people what you'd do to a suspect.'",
+        "confederacy": "A Crown elf is harder to forgive than a human occupier — kin wearing the occupier's coat",
+        "corven-sayle": "Ashcombe is Sayle's camouflage; he worked out Division 13 weeks early and said nothing"
+      },
+      "as_soldier": "Poor with a rifle; the squad arranges itself to keep him alive; permadeath applies and losing him kills the intelligence layer",
+      "closed_case": "A.V. 2319 Eclipsera file closed as ordinary crime — an underpass, a row of cups, three deaths blamed on exposure. It was a Hushfolk working. He does not know."
+    }
+  ],
+  "orders": [
+    {
+      "id": "silent-rose",
+      "name": "Order of the Silent Rose",
+      "tag": "C",
+      "lifecycle_status": "destroyed",
+      "destroyed_at": "A.V. 570 (Siege of Thorns)",
+      "note": "Founded in Anharas's early reign; repurposed by the Vanishing; root of the Veil (CR3)",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "steel-roses",
+      "name": "Order of Steel Roses",
+      "tag": "C",
+      "function": "Direct action, stealth ops",
+      "doctrine": "Urban Shadows (Book VII.2)",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "scarlet-inquisition",
+      "name": "Scarlet Inquisition",
+      "tag": "C",
+      "function": "Strike, interrogation, heresy containment",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "raven",
+      "name": "Order of the Raven",
+      "tag": "C",
+      "function": "Archive, signals, containment mathematics; Glass Tower; MirrorNet",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "queens-garden",
+      "name": "Order of the Queen's Garden",
+      "tag": "C",
+      "function": "Logistics, medicine, counter-intelligence; largest by personnel; full Order A.V. 1650",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "council-of-silence",
+      "name": "Council of Silence",
+      "tag": "C",
+      "function": "Veil governance beneath the Word of the King",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "division-13",
+      "name": "Division 13",
+      "tag": "C",
+      "function": "Resonance-irregular operatives",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "vine",
+      "name": "Veil Internal Security Command (VINE)",
+      "tag": "C",
+      "function": "Internal security; 8-person tactical squads; Bramble Kit issue",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "rdeo",
+      "name": "Royal Directorate of External Operations (RDEO)",
+      "tag": "C",
+      "function": "The Crown's public intelligence arm",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "open-rose",
+      "name": "Order of the Open Rose",
+      "tag": "D/R",
+      "function": "Public ethical mercenary knights founded by Saint Felia (~A.V. 2338); echo of the Silent Rose reborn open",
+      "folk_name": "the Sunrise Knights",
+      "rulings": [
+        "TR5",
+        "TR6"
+      ],
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "D",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "territorial-levy",
+      "name": "Crown Territorial Levy",
+      "tag": "R",
+      "function": "The Crown's citizen-military; ordinary units, ordinary soldiers ('Levies')",
+      "rulings": [
+        "TR6"
+      ],
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "divisional-structure",
+      "name": "Divisional Structure",
+      "tag": "C",
+      "ruling": "CR2",
+      "structure": "13 chartered Divisions (01-09 governance/theology/logistics; 10-12 surveillance/memory/denial; 13 unnamed) comprising 43 autonomous Directorates (modern subordinate commands)",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "sunrise-compact",
+      "name": "The Sunrise Compact",
+      "tag": "D/R",
+      "ruling": "NF1",
+      "era": "Arc III",
+      "function": "Feeds millions on service-without-judgment; by the same refusal provisions violent households, sustains besieging armies, keeps a famine-tyranny standing, and declines all accountability. Good and costly (NF2).",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "D",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "ilreth",
+      "name": "Ilreth",
+      "tag": "C",
+      "type": "founding city",
+      "notes": "Seat of the Crown glyph; Sanctum Requiel beneath",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "eclipsera",
+      "name": "Eclipsera City",
+      "tag": "C",
+      "type": "megacity",
+      "ruling": "C3: distinct from Erevale; Crown heartland",
+      "notes": "Whispers campaign hub; SkyTier complex",
+      "metro": {
+        "name": "Arclight Sprawl",
+        "designation": "Megacity Sector-09",
+        "population": "~29 million",
+        "ruling": "CR2",
+        "note": "Eclipsera = core city/civic identity; Arclight = Veil's administrative conurbation designation"
+      },
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "erevale",
+      "name": "Erevale",
+      "tag": "C",
+      "type": "frontier city-state",
+      "notes": "Last outpost before the Infinite North; hidden Veil station",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "glass-wound",
+      "name": "The Glass Wound",
+      "tag": "C",
+      "type": "unwritten region",
+      "notes": "Former Caliphate capital; Seraphim Zero site; Mhor-Vel file open",
+      "continuum": "Northern Continuum (ruling TR1): null zones = Mhor-Vel signature; folded zones = Threnn-Vel signature",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "infinite-north",
+      "name": "The Infinite North",
+      "tag": "C",
+      "type": "unfixed-law zone",
+      "notes": "Threnn-Vel residue directive standing",
+      "continuum": "Northern Continuum (ruling TR1): null zones = Mhor-Vel signature; folded zones = Threnn-Vel signature",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "desert-elf-confederacy",
+      "name": "Desert Elf Confederacy",
+      "tag": "C",
+      "type": "sovereign nation",
+      "notes": "Sand & Sorcery theater; Goblin Insurgency active (ruling B3.1)",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "caliphate-iron-roots",
+      "name": "Caliphate of Iron Roots",
+      "tag": "C",
+      "type": "destroyed nation",
+      "notes": "Unwritten A.V. 1983",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "mountain-sultanate",
+      "name": "Mountain Sultanate",
+      "tag": "C",
+      "type": "sovereign nation",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "eastern-confederacy",
+      "name": "Eastern Confederacy (beastfolk)",
+      "tag": "C",
+      "type": "sovereign nation",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "tarkesh-vale",
+      "name": "Tarkesh Vale",
+      "tag": "C",
+      "type": "region",
+      "notes": "Highlands north of Ilreth; Caliphate homeland",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "sanctum-requiel",
+      "name": "Sanctum Requiel",
+      "tag": "C",
+      "type": "pre-Veil ritual chamber",
+      "notes": "Awakened A.V. 2325 — an unsealing from within; seat of Kethivar the Key (ruling EC1)",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "dereth",
+      "name": "Dereth",
+      "tag": "C",
+      "type": "cloister (fallen)",
+      "notes": "Siege of Thorns site; echo wounds",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "dray-cross",
+      "name": "Dray Cross",
+      "tag": "R",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "type": "Crown-interior junction town",
+      "notes": "Rail and canal interchange serving the agricultural east; freight, warehousing, cartage; Tarkesh-diaspora quarter from the post-1980 dispersals. The war does not come here; this is where it takes people from.",
+      "name_status": "PROVISIONAL — pending author ratification; alternate 'Vellin Cross' not recommended (ninth V-name)",
+      "ruling": "KC4"
+    }
+  ],
+  "factions_modern": [
+    {
+      "id": "elven-rangers",
+      "name": "Elven Rangers",
+      "tag": "C (promoted, ruling B3.1)",
+      "allegiance": "Desert Elf Confederacy",
+      "kit": "Mithril-weave, arcane gold circuitry, arcane-battery weapons (Overdrive/Mana Burn stress model)",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "goblin-insurgents",
+      "name": "Goblin Insurgents",
+      "tag": "C (promoted, ruling B3.1)",
+      "allegiance": "Insurgency",
+      "kit": "Scrap armor, volatile weapons (D20 natural-1 malfunction), morale-driven cohesion",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "northern-feral-goblins",
+      "name": "Northern feral goblin bands",
+      "tag": "R",
+      "allegiance": "none",
+      "notes": "Unrelated to the desert insurgency (ruling TR2); haunt the Northern Continuum's shallows",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    }
+  ],
+  "systems": {
+    "magic": {
+      "substrate": "Resonance (Mos Dof Anelcia)",
+      "traditions": [
+        "Crown harmonic-tech",
+        "Veil runecraft",
+        "Confederacy battery-tech"
+      ],
+      "corruption": "Inverse Resonance",
+      "ruling": "B3.3"
+    },
+    "game_layers": [
+      {
+        "id": "whispers",
+        "name": "Whispers of the Veil",
+        "tag": "G",
+        "contents": "Rules, attributes, ammo/magazine system, contracts, Felia live sheet",
+        "status": {
+          "identity_status": "P",
+          "narrative_status": "P",
+          "game_state_status": "G",
+          "unfiled": false
+        }
+      },
+      {
+        "id": "sandline",
+        "name": "SANDLINE",
+        "tag": "G",
+        "contents": "Tactical RPG design doc; Desert Elf theater (ruling C5)",
+        "former_name": "Sand & Sorcery: Modern Warfare",
+        "renamed_by": "KC2",
+        "status": {
+          "identity_status": "P",
+          "narrative_status": "P",
+          "game_state_status": "G",
+          "unfiled": false
+        }
+      }
+    ]
+  },
+  "open_items": [
+    "Vrikka severance: optional vs mandatory in play (design-time choice, KC3)",
+    "Kael's fate — death or severance — deliberately unruled (AR1)",
+    "Eight's post-Concord state: Arc III forgetting available as Rhen-Vel's long revenge (flagged, unruled)",
+    "Arc III remains [D/P]",
+    "Volume VI continuation unwritten",
+    "Eight's pre-rebellion names unknown",
+    "Ledger Entry 117.A full text source-archive-only",
+    "Ilreth–Eclipsera regional geography unmapped",
+    "Second Catalogue (Confederacy/desert theater) unwritten; Thornblade recovery arc available",
+    "Northwall repeal / truth commission arc available; Erevale sits above Strand's line",
+    "Echo's post-saga road remains unwritten — now with her voice established for it (EV1)"
+  ],
+  "shepherds": {
+    "tag": "C/R",
+    "ruling": "EC1",
+    "tone_witnesses": [
+      {
+        "seat": 1,
+        "id": "ilesse",
+        "name": "Ilesse the Asking",
+        "tag": "R",
+        "dimension": "Utterance",
+        "answers": "orra-vel",
+        "gift": "Speaks only in questions; speech cannot command reality",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "seat": 2,
+        "name": "Thalen Mirecourt",
+        "tag": "C",
+        "dimension": "Rhythm",
+        "answers": "threnn-vel",
+        "gift": "Endures through time without arresting it; the longest memory",
+        "cross_ref": "figures/thalen-mirecourt",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "C",
+          "game_state_status": "n/a",
+          "unfiled": false
+        },
+        "ref": "thalen-mirecourt"
+      },
+      {
+        "seat": 3,
+        "id": "calmaron",
+        "name": "Calmaron",
+        "tag": "C",
+        "dimension": "Harmony",
+        "answers": "shai-vel",
+        "gift": "Sees patterns in stars not yet formed — bonds that should freely arise",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "C",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "seat": 4,
+        "id": "serevan",
+        "name": "Serevan the Untraveled",
+        "tag": "R",
+        "dimension": "Melody",
+        "answers": "sael-vel",
+        "gift": "Never walks the same path twice; over-worn fate-roads close behind him",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "seat": 5,
+        "id": "orrun",
+        "name": "Orrun the Unnamed",
+        "tag": "C",
+        "dimension": "Silence",
+        "answers": "mhor-vel",
+        "gift": "Mute; his breath makes glass sing; survived a null-zone rim",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "C",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "seat": 6,
+        "id": "yareen",
+        "name": "Yareen",
+        "tag": "C",
+        "dimension": "Echo",
+        "answers": "rhen-vel",
+        "gift": "Weeps at lies, even unspoken; living verification instrument",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "C",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "seat": 7,
+        "id": "bravann",
+        "name": "Bravann the Stillhand",
+        "tag": "R",
+        "dimension": "Amplitude",
+        "answers": "ghaur-vel",
+        "gift": "Strength that only holds; source of dampening doctrine",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "seat": 8,
+        "id": "neriveth",
+        "name": "Neriveth the One Voice",
+        "tag": "R",
+        "dimension": "Timbre",
+        "answers": "vess-vel",
+        "gift": "Unforgeable voice; presence unmasks all mimicry, chimeras included",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      }
+    ],
+    "keepers": [
+      {
+        "id": "elowen",
+        "name": "Elowen of the Between",
+        "tag": "R",
+        "office": "Keeper of Intervals",
+        "domain": "Relations between the tones; feels dimensional grinding as weather",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "id": "maurel",
+        "name": "Maurel the Rest",
+        "tag": "R",
+        "office": "Keeper of the Rests",
+        "domain": "The interregnum; the crowning cycle; 'Let the cycle hold' is his formula",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "id": "kethivar",
+        "name": "Kethivar the Key",
+        "tag": "R",
+        "office": "Keeper of the Key",
+        "domain": "The Verse's tonic; seated at Sanctum Requiel",
+        "cross_ref": "places/sanctum-requiel",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      },
+      {
+        "id": "ondrasse",
+        "name": "Ondrasse the Measure",
+        "tag": "R",
+        "office": "Keeper of the Measure",
+        "domain": "The Seams; the Quieting as ongoing maintenance regime",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      }
+    ],
+    "status": {
+      "identity_status": "C",
+      "narrative_status": "R",
+      "game_state_status": "n/a",
+      "unfiled": false
+    },
+    "ref": "twelve-shepherds"
+  },
+  "culture": {
+    "artifacts": [
+      {
+        "id": "sunrise-knight-play",
+        "name": "The Sunrise Knight",
+        "tag": "R",
+        "creator": "tobbin-fenn",
+        "notes": "Unfinished play; subtitle 'A Play in However Many Acts It Takes'; performed publicly; Arc III key; left incomplete by Felia's choice",
+        "quote": "The knight dreams not of heaven, but of a sunrise she can reach.",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      }
+    ],
+    "brands": [
+      {
+        "id": "perch-coffee",
+        "name": "Perch Coffee",
+        "mascot": "Pip (round wren)",
+        "tag": "R",
+        "notes": "Serin's charm-bracelet comfort; bird motif thread: Pip → origami bird → guitar-string charm",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      }
+    ]
+  },
+  "saga": {
+    "tag": "D",
+    "arcs": [
+      {
+        "n": 1,
+        "name": "The Listening War",
+        "span": "~A.V. 2325–2328",
+        "theme": "learning to feel",
+        "pov_mechanic": "clinical third person tilting into first person; player complicity",
+        "scars": [
+          "The Long Listening (breach narrows, never closes)",
+          "Felia's silence lost",
+          "Contested sainthood"
+        ]
+      },
+      {
+        "n": 2,
+        "name": "The Open Rose",
+        "span": "~A.V. 2338–2345",
+        "theme": "learning to create",
+        "structure": "alternating Felia / Tobbin / together"
+      },
+      {
+        "n": 3,
+        "name": "The Memory of Light",
+        "span": "centuries hence",
+        "theme": "learning to let go",
+        "mechanism": "SUSPECTED (unruled, CR2): Rhen-Vel separating memory from meaning — or ordinary entropy, or something stranger; Arc III exists to find out",
+        "protagonists": [
+          "maera-sill",
+          "corbin-ost"
+        ],
+        "proof_event": "A flawless Rite of the Rest that does nothing; the four-hundred-year-old recording contains a mistake, and the mistake is where the meaning was",
+        "final_test": "sunrise-compact — restoring the original meaning would fracture a good institution",
+        "development_status": "[D/P]"
+      }
+    ],
+    "status": {
+      "identity_status": "D",
+      "narrative_status": "D",
+      "game_state_status": "n/a",
+      "unfiled": false
+    }
+  },
+  "threats": [
+    {
+      "id": "the-concord",
+      "name": "The Concord",
+      "tag": "R",
+      "ruling": "AR1",
+      "nature": "The Eight harmonizing for the first time since the casting-out; composing the Counter-Verse — a competing standing ordinance that re-authors rather than annihilates",
+      "venue": "The Undersong — executory stratum beneath the Lattice",
+      "conductor": {
+        "designation": "The Ninth Chair",
+        "lineage": "Completion of the Dravane heresy (Ninth Harmonic Host)",
+        "ref": "kael-tharanis"
+      },
+      "breach": "Echo's amendment — note taught by the unwritten (Seraphim Zero's devoured voices); true testimony and shared frequency in one",
+      "counterplay": "Kethivar sounds the tonic from Sanctum Requiel; eleven Shepherds hold; Thorn Run 'HOLD' glyph = amended Verse's immune response; Felia removes the conductor",
+      "open": "Kill vs severance of Kael — final playable choice",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    }
+  ],
+  "bestiary": {
+    "tag": "R",
+    "ruling": "BX1",
+    "three_wars": {
+      "worldly": {
+        "mode": "modern tactical espionage combat",
+        "adversaries": "mortals with worldly motives (~90% of engagements)",
+        "orders": [
+          "steel-roses",
+          "vine",
+          "queens-garden"
+        ]
+      },
+      "quiet": {
+        "mode": "paranormal investigation of demonic happenings",
+        "subjects": "Presences, cult signatures, touched cells",
+        "orders": [
+          "raven",
+          "division-13"
+        ]
+      },
+      "burning": {
+        "mode": "otherworldly monster slaying with relic arms",
+        "trigger": "Incarnation",
+        "orders": [
+          "scarlet-inquisition"
+        ]
+      }
+    },
+    "instantiation_gradient": {
+      "states": [
+        "Presence (phenomenal/demonic; heartland-possible)",
+        "Vessel (through touched mortals)",
+        "Incarnate (physical; thin places only)"
+      ],
+      "law": "The casting-out bars direct entry; physicality proportional to local Verse thinness",
+      "rarity": "Single-digit confirmed Incarnations per decade — rising",
+      "symptom_rule": "Incarnate in strong-Verse region = local Verse thinning = Concord fingerprint"
+    },
+    "origin_classes": {
+      "V": "Vessalborn (Vess-Vel chimeras)",
+      "D": "Driftfauna (pre-Verse, unauthored)",
+      "E": "Echoforms (per-god residue; 8 families)",
+      "I": "Inverse-touched (Dravane lineage)",
+      "U": "Unwritten-born (post-Seraphim Zero)"
+    },
+    "grades": [
+      "THORN",
+      "ROSE",
+      "CHOIR",
+      "VERSE"
+    ],
+    "god_touched": [
+      {
+        "patron": "orra-vel",
+        "signature": "Recruit through texts; borrowed cadences in speech"
+      },
+      {
+        "patron": "threnn-vel",
+        "signature": "Perfect timing; ambushes synchronized without signals"
+      },
+      {
+        "patron": "shai-vel",
+        "signature": "Over-synchronized cells; endstate Griefknot; never negotiate alone"
+      },
+      {
+        "patron": "sael-vel",
+        "signature": "Prophecy networks; enemies already at your destination"
+      },
+      {
+        "patron": "mhor-vel",
+        "signature": "Silence cults; witnesses stop mid-sentence"
+      },
+      {
+        "patron": "rhen-vel",
+        "signature": "Memory-edited infiltrators; files disagree with certainty"
+      },
+      {
+        "patron": "ghaur-vel",
+        "signature": "Escalation cults; engagements refuse to de-escalate"
+      },
+      {
+        "patron": "vess-vel",
+        "signature": "Flesh cults; augmentation rings; conducted packs; tone-verification failures"
+      }
+    ],
+    "scarlet_arsenal": [
+      {
+        "id": "cantrix",
+        "name": "Cantrix",
+        "type": "rifle",
+        "effect": "Sung rounds — hymn-syllable ammunition completed as a verse across a firing sequence"
+      },
+      {
+        "id": "lament",
+        "name": "Lament",
+        "type": "greatsword",
+        "effect": "Grief-note tuning; unbinds stolen/fused timbres — the mercy blade for Vessalborn and Griefknots"
+      },
+      {
+        "id": "quiet-nail",
+        "name": "The Quiet Nail",
+        "type": "dagger",
+        "effect": "Absolute dampening; severs cascades and workings of the voice"
+      },
+      {
+        "id": "thornblade",
+        "name": "The Thornblade",
+        "type": "sword",
+        "note": "'If it is found, it goes to whoever the Rose would have chosen.'",
+        "provenance_status": "legend — carried into the flame at the Siege of Thorns; search quietly funded"
+      }
+    ],
+    "catalogue": [
+      {
+        "id": "maskellin",
+        "cls": "V",
+        "grade": "ROSE",
+        "states": [
+          "Incarnate (thin)",
+          "Presence-mimicry (urban)"
+        ],
+        "summary": "Voice-wearing urban chimera; calls prey by name; one stolen voice at a time"
+      },
+      {
+        "id": "firstborn-broods",
+        "cls": "V",
+        "grade": "CHOIR",
+        "states": [
+          "Incarnate"
+        ],
+        "summary": "Lineages of the First Monster; composite megafauna; oldest open file"
+      },
+      {
+        "id": "seamwolves",
+        "cls": "D",
+        "grade": "THORN-ROSE",
+        "states": [
+          "Incarnate (native)"
+        ],
+        "summary": "Seam-denning phase-pack predators; 'the weather with teeth'"
+      },
+      {
+        "id": "glassmoths",
+        "cls": "D",
+        "grade": "THORN (protected)",
+        "states": [
+          "Incarnate (native)"
+        ],
+        "summary": "Living anomaly detectors; caged Veil assets; protected"
+      },
+      {
+        "id": "reprisers",
+        "cls": "E",
+        "patron": "threnn-vel",
+        "grade": "ROSE",
+        "states": [
+          "Presence (urban)",
+          "Incarnate (folded)"
+        ],
+        "summary": "Repeating-minute predators; break tempo to escape"
+      },
+      {
+        "id": "griefknots",
+        "cls": "E",
+        "patron": "shai-vel",
+        "grade": "CHOIR",
+        "states": [
+          "Vessel-endstate"
+        ],
+        "summary": "Fused congregants; overlapping first persons; Lament authorized; conducted as a funeral"
+      },
+      {
+        "id": "hushes",
+        "cls": "E",
+        "patron": "mhor-vel",
+        "grade": "CHOIR",
+        "states": [
+          "Presence"
+        ],
+        "summary": "Accompanying silence; walk toward noise, keep talking"
+      },
+      {
+        "id": "rhenlings",
+        "cls": "E",
+        "patron": "rhen-vel",
+        "grade": "ROSE",
+        "states": [
+          "Presence",
+          "Vessel"
+        ],
+        "summary": "Past-editing memory parasites; twin-scribe detection"
+      },
+      {
+        "id": "stormcantors",
+        "cls": "E",
+        "patron": "ghaur-vel",
+        "grade": "CHOIR",
+        "states": [
+          "Incarnate (thin)",
+          "Presence (urban)"
+        ],
+        "summary": "Self-amplifying cascade elementals; never counter-sing; Quiet Nail forged for them"
+      },
+      {
+        "id": "oraclings",
+        "cls": "E",
+        "patron": "sael-vel",
+        "grade": "ROSE",
+        "states": [
+          "Presence",
+          "Vessel"
+        ],
+        "summary": "Self-fulfilling prophecy parasites; report, never repeat"
+      },
+      {
+        "id": "dreamsent",
+        "cls": "I",
+        "grade": "ROSE",
+        "states": [
+          "Vessel"
+        ],
+        "summary": "Inverse-lullaby sleepers; victims and vectors; Council countersignature to terminate"
+      },
+      {
+        "id": "the-unsung",
+        "cls": "U",
+        "grade": "VERSE",
+        "states": [
+          "unclassifiable"
+        ],
+        "summary": "Devoured Caliphate dead seeking their note; taught Echo; DO NOT ENGAGE"
+      }
+    ],
+    "sealed": "Orra-Vel echoform family — catalogued nowhere by doctrine",
+    "planned": "Second Catalogue: Confederacy theater",
+    "gutter_choirs": {
+      "tag": "R",
+      "ruling": "GC1",
+      "location": "eclipsera",
+      "doctrine": "Cults nested in social blindness; the destitute are victims and camouflage, never targets; no sweeps of the poor. Engage with Worldly tactics + Quiet intelligence.",
+      "metaplot": "Inter-Choir coordination = the Concord's street-level echo (Arc I act)",
+      "factions": [
+        {
+          "id": "gutter-gospel",
+          "name": "The Gutter Gospel",
+          "patron": "orra-vel",
+          "disguise": "Street preachers, doomsayers, pamphleteers",
+          "truth": "Distributed text-cult; tracts carry decoded-speech fragments; reading aloud plants the cadence",
+          "enemies": [
+            "Tractmen (distributor, flees)",
+            "Cadence-Criers (support caster, buff/compel)",
+            "the Spoken (elite; original voice gone)"
+          ],
+          "tell": "Answers arrive in meter; unconnected preachers rhyme line-for-line"
+        },
+        {
+          "id": "long-measure",
+          "name": "The Long Measure",
+          "patron": "threnn-vel",
+          "disguise": "Underlevel busker crews, drum circles, platform metronomists",
+          "truth": "Rhythm induces micro-loops; crimes committed inside stolen minutes",
+          "enemies": [
+            "Beatkeepers (tempo-field drummer; break the drum)",
+            "Loopcutters (attack from a half-second already lived)"
+          ],
+          "tell": "Drums never drift out of sync across the city",
+          "doctrine": "Break tempo; attack off-beat"
+        },
+        {
+          "id": "the-held",
+          "name": "The Held",
+          "patron": "shai-vel",
+          "disguise": "Squatters' commune / free shelter, unsettling warmth",
+          "truth": "Fusion congregation; the lonely bonded and merged; forming Griefknot in the basement",
+          "enemies": [
+            "Wardens (mirror-sync pairs; drop one, both fall)",
+            "the Chorus (cluster sharing one will)",
+            "the Communion (CHOIR-grade Griefknot finale; Scarlet required)"
+          ],
+          "tell": "Residents finish your sentences. Correctly."
+        },
+        {
+          "id": "sure-thing",
+          "name": "The Sure Thing",
+          "patron": "sael-vel",
+          "disguise": "Numbers-runners, lottery touts, alley bookmakers",
+          "truth": "Prophecy racket; spoken outcomes comply; debtors' roads narrow",
+          "enemies": [
+            "Touts (mundane muscle)",
+            "Odds-Speakers (declare your next action — right unless you act insane)",
+            "the Broker (elite; open Oracling on shoulder)"
+          ],
+          "tell": "They pay winners cheerfully; the winning was spoken too"
+        },
+        {
+          "id": "hushfolk",
+          "name": "The Hushfolk",
+          "patron": "mhor-vel",
+          "disguise": "Mute beggars, the silent rows of the underpasses",
+          "truth": "Each coin buys a little of the giver's sound; old rows serve a Hush",
+          "enemies": [
+            "Cupmen (stillness aura; muffled combat, spell penalty)",
+            "Quietors (soundless strikes, no cries)",
+            "the Almoner (elite; forty years silent, no longer needs speech)"
+          ],
+          "tell": "You realize you've been whispering",
+          "containment": "Cups are ANCHORS, not just drains — break them to un-anchor the Almoner. Raven Listeners quantify rows by attenuation percentage. Veil script fails to null-adjacent interference; physical force does not."
+        },
+        {
+          "id": "old-friends",
+          "name": "The Old Friends",
+          "patron": "rhen-vel",
+          "disguise": "Grifters, story-beggars, keepsake pawnbrokers",
+          "truth": "Memories installed, not faked; pawnshops buy claims on one's own history",
+          "enemies": [
+            "Familiars (infiltrators the party misremembers as allies)",
+            "Docents (rewrite last round; wounds un-happen)",
+            "the Curator (elite; shop of stolen childhoods)"
+          ],
+          "tell": "Two witnesses, one stranger only one remembers"
+        },
+        {
+          "id": "the-kindling",
+          "name": "The Kindling",
+          "patron": "ghaur-vel",
+          "disguise": "Dockside hooligan firm + illegal pit-fight circuit",
+          "truth": "Escalation congregation; pits as altars; chant-captains tip crowds into cascades",
+          "enemies": [
+            "Pit Dogs (damage scales per round)",
+            "Chant-Captains (convert bystanders to combatants)",
+            "the Ember (elite; one bad night from Stormcantor vesselhood)"
+          ],
+          "tell": "Violence scales but never disperses",
+          "doctrine": "Dampen, defuse, deny the crowd; never counter-sing, even rhetorically"
+        },
+        {
+          "id": "the-mendery",
+          "name": "The Mendery",
+          "patron": "vess-vel",
+          "disguise": "Charity back-alley clinic; free grafts for the maimed poor",
+          "truth": "Flesh-cult recruitment surgery; healed owe tithe in conducted packs; voice changes within a month",
+          "enemies": [
+            "Grateful (grafted bruisers, tragically loyal)",
+            "Stitchwives (combat surgeons; mid-fight repair)",
+            "the Surgeon-Deacon (elite; body is a congregation)"
+          ],
+          "tell": "Tone-verification failure in a living, smiling patient"
+        }
+      ],
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    "second_catalogue": {
+      "entries": [
+        {
+          "id": "riverspoken",
+          "name": "The Riverspoken",
+          "patron": "sael-vel",
+          "tag": "R",
+          "ruling": "KC2",
+          "disguise": "Prophets of the dead watercourses",
+          "truth": "Sael-touched cult; spoken futures come true; conducts the Thirst's inner circle",
+          "enemies": [
+            "Linewalkers (declare-your-next-action casters; improvisation defeats them)",
+            "the Spoken-For (morale-immune; deaths 'scheduled'; off-schedule kills shake all cultists)",
+            "the Cartographer (elite; elderly elven ex-survey-master; floor-map arena of manifesting future-lines)"
+          ],
+          "interlocks": [
+            "Conductor inside the Thirst",
+            "Wound-steel delivery routes plotted by Linewalkers — ghost-foundry and prophecy files secretly one",
+            "Act V long working: a catastrophic future spoken over the watershed"
+          ],
+          "status": {
+            "identity_status": "C",
+            "narrative_status": "R",
+            "game_state_status": "n/a",
+            "unfiled": false
+          }
+        },
+        {
+          "id": "old-promise",
+          "name": "Old Promise",
+          "cls": "E",
+          "patron": "sael-vel",
+          "grade": "VERSE",
+          "tag": "R",
+          "ruling": "KC3",
+          "states": [
+            "Incarnate — anomalous per Symptom Rule"
+          ],
+          "summary": "The returned river of everything that was ever going to happen; contact = Spoken-For; only unmapping the True Line has turned it",
+          "doctrine": "Do not be where it was told you would be",
+          "containment_status": "PATIENT",
+          "status": {
+            "identity_status": "C",
+            "narrative_status": "R",
+            "game_state_status": "n/a",
+            "unfiled": false
+          }
+        }
+      ],
+      "catalogue_status": "opened"
+    },
+    "status": {
+      "identity_status": "C",
+      "narrative_status": "R",
+      "game_state_status": "n/a",
+      "unfiled": false
+    }
+  },
+  "armory": {
+    "tag": "R",
+    "ruling": "AW1",
+    "chamberings": [
+      "5.6×45 CS Crown Light",
+      "7.7×51 CS Crown Standard",
+      "9×19 E Eclipse Nine",
+      "11.4×23 Heavy Eleven",
+      "7.9×39 TK Root",
+      "13.7×99 Longwall",
+      "Veskar V-cells I–III"
+    ],
+    "manufacturers": [
+      {
+        "name": "Ilbright & Sarn (I&S)",
+        "categories": {
+          "assault_rifles": [
+            {
+              "name": "Pattern 71",
+              "note": "the standard service rifle; harmonically tempered bolt, famously boring, famously eternal"
+            },
+            {
+              "name": "Pattern 71-C",
+              "note": "shortened carbine for mechanized Levies and vehicle crews"
+            },
+            {
+              "name": "Pattern 76 \"Warden\"",
+              "note": "integrally suppressed constabulary rifle for urban writs"
+            },
+            {
+              "name": "Pattern 80",
+              "note": "modernized rail-and-optic ecosystem with Glassline data link to squad boards"
+            },
+            {
+              "name": "Pattern 68-M",
+              "note": "reserve-stock legacy pattern refit ambidextrous; issued when the warehouses open"
+            }
+          ],
+          "battle_rifles": [
+            {
+              "name": "Pattern 55",
+              "note": "the late-war workhorse that walked out of the Poisoned River"
+            },
+            {
+              "name": "Pattern 62",
+              "note": "product-improved 55; chrome bore, forward assist, fewer excuses"
+            },
+            {
+              "name": "Pattern 59 \"Vale Carbine\"",
+              "note": "shortened 7.7 for highland patrols"
+            },
+            {
+              "name": "Pattern 81 \"Longwatch\"",
+              "note": "heavy-profile battle rifle bridging toward marksman work"
+            },
+            {
+              "name": "Pattern 84",
+              "note": "modern modular receiver, quick-change barrel, adopted by Levy weapons companies"
+            }
+          ],
+          "pistols": [
+            {
+              "name": "Pattern 9",
+              "note": "the service sidearm; hammer-fired, indifferent to mud and opinion"
+            },
+            {
+              "name": "Pattern 9-C",
+              "note": "compact issue for plainclothes writs"
+            },
+            {
+              "name": "Pattern 12",
+              "note": "double-stack duty pistol for the Constabulary"
+            },
+            {
+              "name": "Pattern 33",
+              "note": "the constable's revolver, still made because sergeants vote"
+            },
+            {
+              "name": "Pattern 40",
+              "note": "target model; Crown pistol-trials standard"
+            },
+            {
+              "name": "Pattern 9-S",
+              "note": "suppressed pattern; the ledger says \"export\""
+            },
+            {
+              "name": "Pattern 17",
+              "note": "officer's pocket pistol, more insignia than gun"
+            },
+            {
+              "name": "Pattern 22",
+              "note": "rimfire trainer for the academies"
+            },
+            {
+              "name": "Pattern 90",
+              "note": "modern striker with optics plate; the 9's designated heir"
+            },
+            {
+              "name": "Pattern 45 \"Ordnance\"",
+              "note": "Heavy Eleven service magnum for door-kicking details"
+            }
+          ],
+          "submachine_guns": [
+            {
+              "name": "Pattern 30",
+              "note": "the stamped wartime gun; ugly, decisive"
+            },
+            {
+              "name": "Pattern 38 \"Constable\"",
+              "note": "closed-bolt carbine for city writs"
+            },
+            {
+              "name": "Pattern 52",
+              "note": "folding-stock airborne pattern"
+            },
+            {
+              "name": "Pattern 77",
+              "note": "PDW for Glassline crews and signalists"
+            },
+            {
+              "name": "Pattern 83",
+              "note": "suppressed courier gun; the ledger again says \"export.\""
+            }
+          ],
+          "belt_fed_light_machine_guns": [
+            {
+              "name": "Pattern 48 \"Millwright\"",
+              "note": "the GPMG that never stops; 7.7"
+            },
+            {
+              "name": "Pattern 63",
+              "note": "squad automatic in 5.6; the Levy's loud opinion"
+            },
+            {
+              "name": "Pattern 79",
+              "note": "vehicle flex gun, remote-mount capable"
+            }
+          ],
+          "tactical_shotguns": [
+            {
+              "name": "Pattern 8 \"Breacher\"",
+              "note": "pump entry gun, doctrine-standard"
+            },
+            {
+              "name": "Pattern 14",
+              "note": "semi-automatic entry shotgun for Constabulary tactical"
+            },
+            {
+              "name": "Pattern 8-M",
+              "note": "magazine-fed Breacher variant"
+            }
+          ],
+          "civilian_shotguns": [
+            {
+              "name": "Fielder 12",
+              "note": "the farm-gate pump half the Crown owns"
+            },
+            {
+              "name": "Fielder Coach",
+              "note": "side-by-side; short, polite, final"
+            },
+            {
+              "name": "Hearthguard 20",
+              "note": "light home-defense gun marketed to households and disliked by burglars"
+            }
+          ],
+          "designated_marksman_rifles": [
+            {
+              "name": "Pattern 81-D",
+              "note": "Longwatch with match trigger and glass"
+            },
+            {
+              "name": "Pattern 71-DM",
+              "note": "squad marksman conversion of the service rifle"
+            },
+            {
+              "name": "Pattern 85",
+              "note": "semi-auto 7.7 with harmonic barrel damper; the Census hears it more clearly than most, say the rumors"
+            }
+          ],
+          "sniper_rifles": [
+            {
+              "name": "Pattern 96 \"Quiet Arithmetic\"",
+              "note": "bolt-action 7.7/Longwall convertible; the Crown's patient answer"
+            },
+            {
+              "name": "Pattern 2000 \"Meridian\"",
+              "note": "modern precision chassis; issued with a logbook the shooter signs like a confession"
+            }
+          ],
+          "unique_i_s_types": [
+            {
+              "name": "Murmur",
+              "note": "less-lethal riot launcher; harmonically \"soft\" projectiles that dishearten as much as bruise"
+            },
+            {
+              "name": "Pattern 70 Discharger",
+              "note": "under-barrel rifle-grenade system, doctrine-integrated"
+            },
+            {
+              "name": "Longwall Rifle",
+              "note": "modern 13.7 fortress wall gun for static Levy posts"
+            },
+            {
+              "name": "Harmonic-Lock Line",
+              "note": "tone-keyed sidearm family that fires only for its registered bearer; Council principals carry them"
+            },
+            {
+              "name": "Signal Pattern 90",
+              "note": "harmonic signal gun whose flares are also data bursts on the Glassline"
+            }
+          ],
+          "unique_heavy_weapons": [
+            {
+              "name": "Pattern 4 \"Threshing Floor\"",
+              "note": "rotary autocannon for point defense"
+            },
+            {
+              "name": "Pattern 21 \"Doorknock\"",
+              "note": "recoilless rifle for bunker reduction"
+            },
+            {
+              "name": "Pattern 33 \"Belltower\"",
+              "note": "harmonic mortar; its rounds ring on descent, and defenders learn the interval that means run"
+            }
+          ],
+          "legacy_assault_rifles": [
+            {
+              "name": "Pattern 44",
+              "note": "the late-war select-fire rifle of the steel scandal; collectors check the temper stamps"
+            },
+            {
+              "name": "Pattern 50",
+              "note": "early postwar pattern with the magazine feud that birthed the 71"
+            }
+          ],
+          "out_of_date_bolt_rifle": [
+            {
+              "name": "Pattern 1899 \"Sarn-Ilbright Long Rifle\"",
+              "note": "the pre-war service bolt gun; Levy honor guards still shoulder them"
+            }
+          ],
+          "out_of_date_smg": [
+            {
+              "name": "Pattern 28 \"Trench Broom\"",
+              "note": "the first I&S burp gun; museum piece, still occasionally confiscated working"
+            }
+          ],
+          "out_of_date_unique": [
+            {
+              "name": "Signal Pattern 16",
+              "note": "the original flare-volley harmonic signaler; the Raven keeps a rack of them because the old frequency still carries where the new ones don't"
+            }
+          ]
+        },
+        "philosophy": "a quality weapon disappears into doctrine.",
+        "id": "ilbright-sarn",
+        "hq": "Ilreth, Crown",
+        "est": "A.V. 1871",
+        "founders": [
+          "Maura Ilbright",
+          "Edwin Sarn"
+        ],
+        "ownership": "Crown-chartered private contractor (nationalized 1950–1991)",
+        "scandals": [
+          "Pattern 44 steel fraud",
+          "Emberwake logistics affair"
+        ],
+        "rumors": [
+          "The Census — Raven hears every registered serial fired",
+          "Shop Nine unmarked patterns for the Veil"
+        ],
+        "customers": [
+          "Crown Army",
+          "Territorial Levy",
+          "RDEO",
+          "Eclipsera Constabulary",
+          "allied exports"
+        ]
+      },
+      {
+        "name": "Tarkesh Foundries (Iron Root Arms)",
+        "categories": {
+          "assault_rifles": [
+            {
+              "name": "TF-47 \"Mattock\"",
+              "note": "the most-produced rifle in the world; it works because it refuses not to"
+            },
+            {
+              "name": "TF-63 \"Mattock-M\"",
+              "note": "stamped-receiver modernization; lighter, no politer"
+            },
+            {
+              "name": "TF-74 \"Tine\"",
+              "note": "small-bore 5.5 TK answer to the Crown Light"
+            },
+            {
+              "name": "TF-90 \"Rootline\"",
+              "note": "railed export modern; the Mattock in a business suit"
+            },
+            {
+              "name": "TF-12M",
+              "note": "bullpup trials rifle the Sultanate rejected and everyone else bought"
+            }
+          ],
+          "battle_rifles": [
+            {
+              "name": "TF-40 \"Sledge\"",
+              "note": "the Caliphate's war rifle; museum-grade and still killing"
+            },
+            {
+              "name": "TF-55 \"Pry\"",
+              "note": "long-barrel battle rifle leaning toward marksman work"
+            },
+            {
+              "name": "TF-59 \"Anvil Carbine\"",
+              "note": "shortened Sledge for mountain troops"
+            },
+            {
+              "name": "TF-70 \"Breaker\"",
+              "note": "heavy 8.6 battle rifle for the Sultanate's shock companies"
+            },
+            {
+              "name": "TF-88",
+              "note": "modern battle rifle with the diaspora's first free-float barrel; the old smiths grumble"
+            }
+          ],
+          "pistols": [
+            {
+              "name": "TF-P1 \"Knuckle\"",
+              "note": "wartime slab of a pistol; doubles as its own holster wear"
+            },
+            {
+              "name": "TF-P5 \"Tusk\"",
+              "note": "the service standard; Heavy Eleven"
+            },
+            {
+              "name": "TF-P5C",
+              "note": "compact Tusk, relatively speaking"
+            },
+            {
+              "name": "TF-P9 \"Bolt\"",
+              "note": "rugged striker gun; drop-tested off a cliff, allegedly on purpose"
+            },
+            {
+              "name": "TF-R4 \"Drum\"",
+              "note": "Heavy Eleven revolver beloved of caravan guards"
+            },
+            {
+              "name": "TF-P13 \"Grip\"",
+              "note": "compact carry for diaspora shopkeepers"
+            },
+            {
+              "name": "TF-P20",
+              "note": "the \"mudproof\" pistol; the ad is a photograph of mud"
+            },
+            {
+              "name": "TF-P33",
+              "note": "machine pistol the Sultanate keeps trying to ban"
+            },
+            {
+              "name": "TF-P40 \"Bhorra\"",
+              "note": "commemorative of the founder; engraved roots, functional grief"
+            },
+            {
+              "name": "TF-P50",
+              "note": "modern optics-ready duty pistol for export trials"
+            }
+          ],
+          "submachine_guns": [
+            {
+              "name": "TF-S2 \"Chatter\"",
+              "note": "wartime stamped gun; cheap as regret"
+            },
+            {
+              "name": "TF-S7 \"Burrow\"",
+              "note": "the tunnel gun; short, loud, made for the Vale's mines"
+            },
+            {
+              "name": "TF-S9",
+              "note": "folding-stock convoy gun"
+            },
+            {
+              "name": "TF-S30 \"Ratchet\"",
+              "note": "high-capacity modern; the bolt sounds like its name"
+            },
+            {
+              "name": "TF-S41",
+              "note": "suppressed pattern for Sultanate marshals"
+            }
+          ],
+          "belt_fed_light_machine_guns": [
+            {
+              "name": "TF-L46 \"Millstone\"",
+              "note": "the belt-fed that ate the Poisoned River's banks"
+            },
+            {
+              "name": "TF-L67 \"Ox\"",
+              "note": "GPMG; carries like its name, runs like a myth"
+            },
+            {
+              "name": "TF-L80 \"Furrow\"",
+              "note": "light belt-fed in 5.5 TK for the modern squad"
+            }
+          ],
+          "tactical_shotguns": [
+            {
+              "name": "TF-G3 \"Gate\"",
+              "note": "pump gun with bayonet lug, because of course"
+            },
+            {
+              "name": "TF-G8 \"Harrow\"",
+              "note": "magazine-fed automatic; crowd arguments end"
+            },
+            {
+              "name": "TF-G12 \"Ram\"",
+              "note": "breacher with standoff crown and a stock you could beam a house with"
+            }
+          ],
+          "civilian_shotguns": [
+            {
+              "name": "Hearthroot",
+              "note": "single-shot everyman gun; a million kitchens"
+            },
+            {
+              "name": "Field Ox",
+              "note": "pump gun sold with a plow-grease warranty"
+            },
+            {
+              "name": "Granary",
+              "note": "coach gun for grain-yard watchmen"
+            }
+          ],
+          "designated_marksman_rifles": [
+            {
+              "name": "TF-D55",
+              "note": "scoped Pry; the insurgent's graduation gift"
+            },
+            {
+              "name": "TF-D77 \"Longroot\"",
+              "note": "semi-auto 8.6 marksman standard"
+            },
+            {
+              "name": "TF-D91",
+              "note": "modern DMR with the company's first adjustable anything"
+            }
+          ],
+          "sniper_rifles": [
+            {
+              "name": "TF-X1 \"Patient Hammer\"",
+              "note": "bolt-action 8.6; the name is the manual"
+            },
+            {
+              "name": "TF-X13 \"Vale's Eye\"",
+              "note": "13.7 anti-materiel rifle; two orcs or one argument to carry"
+            }
+          ],
+          "unique_tarkesh_types": [
+            {
+              "name": "Root Cellar",
+              "note": "entrenching-carbine; a working shovel that is also, regrettably for someone, a working gun"
+            },
+            {
+              "name": "Kettle-Bell",
+              "note": "hand mortar for clearing terraces and opinions"
+            },
+            {
+              "name": "Tuskbreaker",
+              "note": "4-bore stopping rifle from the Vale's great-game days, still made for Continuum guides"
+            },
+            {
+              "name": "Wallhook",
+              "note": "crew-served slug-thrower for gate defense"
+            },
+            {
+              "name": "Grath's Word",
+              "note": "the hammer-pistol issued to clan chiefs; ceremonial, proofed live, because a Word must be kept"
+            }
+          ],
+          "unique_heavy_weapons": [
+            {
+              "name": "TF-H12 \"Riverback\"",
+              "note": "13.7 heavy machine gun; the tripod outweighs the gunner"
+            },
+            {
+              "name": "TF-RG7 \"Fist of the Vale\"",
+              "note": "shoulder rocket; the insurgent's other graduation gift"
+            },
+            {
+              "name": "TF-H50 \"Quakemaker\"",
+              "note": "towed automatic mortar the Sultanate parades and rarely admits firing"
+            }
+          ],
+          "legacy_assault_rifles": [
+            {
+              "name": "TF-44 \"First Mattock\"",
+              "note": "milled original; Wound-steel examples are reliquaries"
+            },
+            {
+              "name": "TF-52 \"Coalhand\"",
+              "note": "interim pattern with the gas system Dargan's memoirs apologize for"
+            }
+          ],
+          "out_of_date_bolt_rifle": [
+            {
+              "name": "TF-11 \"Old Anvil\"",
+              "note": "the Vale's pre-war service bolt gun; funerals in the diaspora still fire three rounds from Old Anvils, aimed north"
+            }
+          ],
+          "out_of_date_smg": [
+            {
+              "name": "TF-S1 \"Riveter\"",
+              "note": "the foundry-floor gun, built from literal boiler stock"
+            }
+          ],
+          "out_of_date_unique": [
+            {
+              "name": "TF-U0 \"Doorwright\"",
+              "note": "black-powder wall petard gun from the clan wars; the manual is one sentence and a prayer"
+            }
+          ]
+        },
+        "philosophy": "a rifle should outlive its nation.",
+        "id": "tarkesh-foundries",
+        "hq": "Mountain Sultanate (in exile; founded Tarkesh Vale)",
+        "est": "A.V. 1907",
+        "founders": [
+          "Ur-smith Bhorra Mokh'tar"
+        ],
+        "ownership": "Re-chartered A.V. 1990 by Dargan Mokh; diaspora-held",
+        "scandals": [
+          "Post-war arms flooding",
+          "Sultanate bribery trial A.V. 2284"
+        ],
+        "rumors": [
+          "Wound steel never rusts; serials rearrange",
+          "Ghost foundry still running inside the Glass Wound; unshipped deliveries arrive"
+        ],
+        "customers": [
+          "Sultanate army",
+          "Confederacy militias",
+          "Eastern Confederacy levies",
+          "insurgencies",
+          "collectors"
+        ]
+      },
+      {
+        "name": "Veskar Precision Arms (VPA)",
+        "categories": {
+          "assault_rifles": [
+            {
+              "name": "VS-9 \"Sirocco\"",
+              "note": "Ranger standard; Grade-II cell, honest in heat that kills other rifles"
+            },
+            {
+              "name": "VS-9C \"Zephyr\"",
+              "note": "carbine Sirocco for vehicle scouts"
+            },
+            {
+              "name": "VS-11 \"Khamsin\"",
+              "note": "pure-powder export model for battery-embargoed markets"
+            },
+            {
+              "name": "VS-14 \"Mirage\"",
+              "note": "low-signature rifle; thermally and harmonically quiet"
+            },
+            {
+              "name": "VS-16 \"Simoom\"",
+              "note": "Overdrive-capable assault rifle; the trigger guard carries a temperature strip and a warning in three languages"
+            }
+          ],
+          "battle_rifles": [
+            {
+              "name": "VS-7 \"Duneline\"",
+              "note": "the long-range patrol rifle of the border wire"
+            },
+            {
+              "name": "VS-8 \"Scour\"",
+              "note": "hard-recoiling brush gun the Rangers love irrationally"
+            },
+            {
+              "name": "VS-10 \"Harmattan\"",
+              "note": "battery-stabilized battle rifle; recoil like a shrug"
+            },
+            {
+              "name": "VS-12 \"Leeward\"",
+              "note": "designated support battle rifle with cell-cooled barrel"
+            },
+            {
+              "name": "VS-19 \"Sandglass\"",
+              "note": "the modern flagship; its heat gauge is the sandglass"
+            }
+          ],
+          "pistols": [
+            {
+              "name": "VP-1 \"Adder\"",
+              "note": "service standard; Eclipse Nine"
+            },
+            {
+              "name": "VP-2 \"Viper\"",
+              "note": "compact Adder"
+            },
+            {
+              "name": "VP-3 \"Asp\"",
+              "note": "pocket pistol; two grams of mercy less than none"
+            },
+            {
+              "name": "VP-5 \"Sidewind\"",
+              "note": "battery-mated duty pistol; flat as a whisper"
+            },
+            {
+              "name": "VP-6 \"Dustwake\"",
+              "note": "hard-service pistol for the deep wire"
+            },
+            {
+              "name": "VP-7 \"Oasis\"",
+              "note": "target pistol; Confederacy trials queen"
+            },
+            {
+              "name": "VP-8 \"Nightbloom\"",
+              "note": "integrally suppressed; a Veil favorite the Veil denies"
+            },
+            {
+              "name": "VP-9 \"Cactusflower\"",
+              "note": "ceremonial-functional; gift of state, proofed live"
+            },
+            {
+              "name": "VP-10 \"Glasswind\"",
+              "note": "competition race gun"
+            },
+            {
+              "name": "VP-12 \"Sunspot\"",
+              "note": "Heavy Eleven magnum with a Grade-I cell to make it civil"
+            }
+          ],
+          "submachine_guns": [
+            {
+              "name": "VK-2 \"Whisperwind\"",
+              "note": "the quiet standard"
+            },
+            {
+              "name": "VK-3 \"Gust\"",
+              "note": "mechanized crews' gun"
+            },
+            {
+              "name": "VK-5 \"Haze\"",
+              "note": "PDW for battery-techs and signalists"
+            },
+            {
+              "name": "VK-7 \"Vortex\"",
+              "note": "high-rate room gun; the manual is mostly restraint"
+            },
+            {
+              "name": "VK-9 \"Stillair\"",
+              "note": "integrally suppressed with cell-damped bolt; the quietest production firearm made, and the Veil's actual favorite"
+            }
+          ],
+          "belt_fed_light_machine_guns": [
+            {
+              "name": "VL-1 \"Duststorm\"",
+              "note": "squad belt-fed; cell-assisted feed never stutters in grit"
+            },
+            {
+              "name": "VL-4 \"Monsoon\"",
+              "note": "sustained-fire gun with battery cooling jacket; the barrel change is a firmware setting"
+            },
+            {
+              "name": "VL-6 \"Squall\"",
+              "note": "light 5.6 belt-fed for Ranger fast teams"
+            }
+          ],
+          "tactical_shotguns": [
+            {
+              "name": "VG-1 \"Thornburst\"",
+              "note": "Ranger entry gun"
+            },
+            {
+              "name": "VG-3 \"Cascade\"",
+              "note": "automatic shotgun; cell-managed recoil"
+            },
+            {
+              "name": "VG-5 \"Bloom\"",
+              "note": "modular gauge-convertible tactical"
+            }
+          ],
+          "civilian_shotguns": [
+            {
+              "name": "Homestead 12",
+              "note": "the settlement pump gun"
+            },
+            {
+              "name": "Garden Gate 20",
+              "note": "light home gun sold with a Confederacy safety primer"
+            },
+            {
+              "name": "Dawnkeeper",
+              "note": "lever-action shotgun; frontier romance, functional dawn"
+            }
+          ],
+          "designated_marksman_rifles": [
+            {
+              "name": "VD-2 \"Farsight\"",
+              "note": "Ranger squad DMR"
+            },
+            {
+              "name": "VD-4 \"Horizon\"",
+              "note": "semi-auto 7.7 with cell-stabilized floatweight"
+            },
+            {
+              "name": "VD-6 \"Heatline\"",
+              "note": "battery-stabilized DMR; its reticle *is* the heat gauge"
+            }
+          ],
+          "sniper_rifles": [
+            {
+              "name": "VX-1 \"Silence of Noon\"",
+              "note": "bolt gun of the border legends; the name is a Ranger toast"
+            },
+            {
+              "name": "VX-3 \"Skyglass\"",
+              "note": "extreme-range platform; cell-spun projectiles, logbook sealed by regiment"
+            }
+          ],
+          "unique_veskar_types": [
+            {
+              "name": "Emberlance",
+              "note": "pure arcane arc-carbine; no cartridge at all, only cell and consequence"
+            },
+            {
+              "name": "Choirline Nine",
+              "note": "the tone-keyed pistol that fires for one voice alone; officially a rumor"
+            },
+            {
+              "name": "Glassbow",
+              "note": "powered recurve-rail; the old elven bow, argued into the modern era"
+            },
+            {
+              "name": "Heatsink Gauntletgun",
+              "note": "wrist-mounted last-resort weapon for battery-techs"
+            },
+            {
+              "name": "Mirrorshot",
+              "note": "refraction-sighted rifle that shoots from full cover via prism rail; banned from three competitions, adopted by two armies"
+            }
+          ],
+          "unique_heavy_weapons": [
+            {
+              "name": "Sunfall",
+              "note": "shoulder beam-lance; Overdrive anti-armor with a two-shot conscience"
+            },
+            {
+              "name": "Stormcell",
+              "note": "automatic grenade launcher with cell-timed airburst"
+            },
+            {
+              "name": "Duneshaker",
+              "note": "recoilless gun for cracking buried fortresses, which the Confederacy has in inventory and in ancestry"
+            }
+          ],
+          "legacy_assault_rifles": [
+            {
+              "name": "VS-1 \"First Wind\"",
+              "note": "the 2140s original; cell bay the size of a lunchbox"
+            },
+            {
+              "name": "VS-4 \"Old Sirocco\"",
+              "note": "beloved, overheating, retired with honors and lawsuits"
+            }
+          ],
+          "out_of_date_bolt_rifle": [
+            {
+              "name": "the Founder's Rifle (Long Pattern 2110)",
+              "note": "Sylvane's pre-company bolt gun pattern; Ranger officers may commission one upon retirement, and do"
+            }
+          ],
+          "out_of_date_smg": [
+            {
+              "name": "VK-0 \"Sandfly\"",
+              "note": "the pre-cell burp gun; jams politely"
+            }
+          ],
+          "out_of_date_unique": [
+            {
+              "name": "Tindervane",
+              "note": "pre-battery arcane igniter carbine; half flintlock, half prayer, wholly a museum's problem now"
+            }
+          ]
+        },
+        "philosophy": "performance is a temperature problem.",
+        "id": "veskar-precision",
+        "hq": "Desert Elf Confederacy",
+        "est": "A.V. 2101",
+        "founders": [
+          "Master-Armorer Sylvane Veskar"
+        ],
+        "ownership": "40% Confederacy sovereign fund (2210); Crown buyout blocked 2290",
+        "scandals": [
+          "Overdrive recalls / Mana Burn deaths",
+          "Vanishing of whistleblower Telien Marsk (2277)"
+        ],
+        "rumors": [
+          "Choirline tone-keyed weapons under sealed Division 13 contract",
+          "Sylvane still designs as 'S.V., journeyman'"
+        ],
+        "customers": [
+          "Elven Rangers",
+          "Confederacy special reconnaissance",
+          "quiet Crown accounts",
+          "Veil cutouts"
+        ]
+      },
+      {
+        "name": "Hallowell Arms Company (HAC)",
+        "categories": {
+          "assault_rifles": [
+            {
+              "name": "Citizen-15",
+              "note": "the best-selling civilian rifle in the Crown; the name is the marketing"
+            },
+            {
+              "name": "Defender Pro",
+              "note": "Citizen with the accessories pre-bought"
+            },
+            {
+              "name": "Skyline Tactical",
+              "note": "the security-contract model; matte everything"
+            },
+            {
+              "name": "Vanguard Elite",
+              "note": "flagship with licensed I&S internals nobody mentions"
+            },
+            {
+              "name": "Citizen-15 Nite",
+              "note": "the same rifle, black-on-black, forty percent more"
+            }
+          ],
+          "battle_rifles": [
+            {
+              "name": "Statesman",
+              "note": "walnut, blued, sold with a leather case and a feeling"
+            },
+            {
+              "name": "Statesman Scout",
+              "note": "shortened with forward glass"
+            },
+            {
+              "name": "Frontiersman",
+              "note": "the ranch rifle of a frontier that is mostly billboards"
+            },
+            {
+              "name": "Overwatch MK2",
+              "note": "the security-firm battle rifle; the MK1 is not discussed"
+            },
+            {
+              "name": "Heritage Battle Classic",
+              "note": "a reproduction of a rifle Hallowell never actually made"
+            }
+          ],
+          "pistols": [
+            {
+              "name": "Guardian Nine",
+              "note": "the flagship striker; one in every fifth nightstand in Eclipsera"
+            },
+            {
+              "name": "Guardian Compact",
+              "note": "the handbag standard"
+            },
+            {
+              "name": "Guardian Micro",
+              "note": "smaller, somehow louder"
+            },
+            {
+              "name": "Escort",
+              "note": "small-caliber carry gun; the ad is a taxi at night"
+            },
+            {
+              "name": "Duchess",
+              "note": "marketed to women; pearl options, better trigger than the Guardian, quietly"
+            },
+            {
+              "name": "Enforcer 45",
+              "note": "Heavy Eleven for men the ads call decisive"
+            },
+            {
+              "name": "Ranger Match",
+              "note": "target line; the sponsored shooters use reworked ones"
+            },
+            {
+              "name": "Nightwatch",
+              "note": "integrated light and a strobe the manual overexplains"
+            },
+            {
+              "name": "Pocket Pal 22",
+              "note": "rimfire vest gun; the name has aged poorly"
+            },
+            {
+              "name": "Executive",
+              "note": "gold accents, SkyTier boutique exclusive; the gun equivalent of a business card"
+            }
+          ],
+          "submachine_guns": [
+            {
+              "name": "Metro-9",
+              "note": "PDW for transit police contracts"
+            },
+            {
+              "name": "Valet",
+              "note": "the chauffeur-and-bodyguard gun; fits under seats by design"
+            },
+            {
+              "name": "Skyline PDX",
+              "note": "security-tower issue"
+            },
+            {
+              "name": "Commuter",
+              "note": "folding carbine sold with a briefcase, until the Constabulary objected"
+            },
+            {
+              "name": "Concierge",
+              "note": "suppressed model for \"hospitality security,\" a phrase the Raven files under humor"
+            }
+          ],
+          "belt_fed_light_machine_guns": [
+            {
+              "name": "Peacekeeper 556",
+              "note": "the contract SAW; adequate, advertised as legendary"
+            },
+            {
+              "name": "Sentry",
+              "note": "fixed-position belt-fed for compound security"
+            },
+            {
+              "name": "Bulwark",
+              "note": "GPMG that lost the Levy trials and won the export brochures"
+            }
+          ],
+          "tactical_shotguns": [
+            {
+              "name": "Riot Master 12",
+              "note": "Constabulary line gun"
+            },
+            {
+              "name": "Entry Pro",
+              "note": "the security-firm breacher"
+            },
+            {
+              "name": "Streetsweeper Auto",
+              "note": "recalled A.V. 2299, re-released A.V. 2301 with a new name plate and the same bolt"
+            }
+          ],
+          "civilian_shotguns": [
+            {
+              "name": "HomeGuard 12",
+              "note": "the suburban standard; the ad is a porch light"
+            },
+            {
+              "name": "HomeGuard Cottage 20",
+              "note": "lighter, for the same porch"
+            },
+            {
+              "name": "Night Porch",
+              "note": "lever-action .410; sells on the name alone, which was the plan"
+            }
+          ],
+          "designated_marksman_rifles": [
+            {
+              "name": "Overwatch DM",
+              "note": "security marksman standard"
+            },
+            {
+              "name": "Skyline Precision",
+              "note": "rooftop-contract rifle for SkyTier estates"
+            },
+            {
+              "name": "Civic Marksman",
+              "note": "the competition line; wins just often enough"
+            }
+          ],
+          "sniper_rifles": [
+            {
+              "name": "Longview",
+              "note": "magnum bolt gun with a warranty longer than its accuracy log"
+            },
+            {
+              "name": "Penthouse",
+              "note": "a luxury precision rifle with a humidor-grade case; four figures of it are the case"
+            }
+          ],
+          "unique_hallowell_types": [
+            {
+              "name": "Doorbell",
+              "note": "consumer less-lethal home turret; the recall queue is itself a scandal-in-waiting"
+            },
+            {
+              "name": "Guardian Smart",
+              "note": "biometric pistol; reviewers agree it fails safe, and often"
+            },
+            {
+              "name": "Bodega Special",
+              "note": "pistol-shotgun derringer for shopkeepers; underlevel icon"
+            },
+            {
+              "name": "Valet Twin",
+              "note": "double-barreled machine pistol that should not exist and outsells the reasons"
+            },
+            {
+              "name": "Showpiece",
+              "note": "modular display rifle in seven calibers; more product line than firearm"
+            }
+          ],
+          "unique_heavy_weapons": [
+            {
+              "name": "Riot Line Water-Ram",
+              "note": "crowd cannon sold to municipalities with financing"
+            },
+            {
+              "name": "Sentinel RWS",
+              "note": "remote weapon pod for towers and estates"
+            },
+            {
+              "name": "Skyhook",
+              "note": "tethered drone gun from a defense-contract experiment; three exist, all in marketing photos"
+            }
+          ],
+          "legacy_assault_rifles": [
+            {
+              "name": "Citizen-10",
+              "note": "the 2230s original; the lawsuits built the 15"
+            },
+            {
+              "name": "Patriot Mark I",
+              "note": "a trials rifle whose name outlived its extraction problems"
+            }
+          ],
+          "out_of_date_bolt_rifle": [
+            {
+              "name": "Sportsman 30",
+              "note": "\"a Hallowell classic,\" which was rebranded I&S surplus; the footnote cost a vice-president his job and the company nothing"
+            }
+          ],
+          "out_of_date_smg": [
+            {
+              "name": "Metro Classic",
+              "note": "the original transit gun; collectors call it honest, which no one at Hallowell says twice"
+            }
+          ],
+          "out_of_date_unique": [
+            {
+              "name": "Stagecoach 4-in-1",
+              "note": "the folding survival gun of a camping craze; four calibers, one regret"
+            }
+          ]
+        },
+        "philosophy": "quality is confidence.",
+        "id": "hallowell-arms",
+        "hq": "Eclipsera",
+        "est": "A.V. 2212",
+        "founders": [
+          "Perrin Hallowell"
+        ],
+        "ownership": "Acquired A.V. 2301 by Lumen Vast Holdings",
+        "scandals": [
+          "Gutter Dumping (Kindling pits)",
+          "Firing Pin Actions A.V. 2308",
+          "Duchess endorsement affair"
+        ],
+        "rumors": [
+          "Guardian Nine grip geometry by Sael-touched consultant",
+          "Lumen Vast board Veil cutout seat",
+          "Warranty serials harvested into the Census"
+        ],
+        "customers": [
+          "Eclipsera Constabulary",
+          "private security firms",
+          "SkyTier households",
+          "the aspirational middle"
+        ]
+      },
+      {
+        "name": "The Maben Atelier",
+        "categories": {
+          "assault_rifles": [
+            {
+              "name": "Etude-7",
+              "note": "their concession to modern trials; scandalously good, deliberately unscaled"
+            },
+            {
+              "name": "Motif",
+              "note": "carbine; the barrel band is engraved with its note"
+            },
+            {
+              "name": "Ostinato",
+              "note": "integrally suppressed; the name means a phrase that repeats quietly"
+            },
+            {
+              "name": "Canon",
+              "note": "the double-voiced rifle; two-round settling burst tuned a fifth apart"
+            },
+            {
+              "name": "Toccata",
+              "note": "race-tuned competition rifle; loses only to other Toccatas"
+            }
+          ],
+          "battle_rifles": [
+            {
+              "name": "Ballade",
+              "note": "the gentleman's battle rifle, if such a thing should exist"
+            },
+            {
+              "name": "Chorale",
+              "note": "squad-voiced batch rifles tuned as a consonant set; issued together or not at all"
+            },
+            {
+              "name": "Fugue",
+              "note": "counterweighted action; recoil answered by its own countersubject"
+            },
+            {
+              "name": "Nocturne",
+              "note": "night-voiced; every surface deadened, every sound accounted"
+            },
+            {
+              "name": "Sonata Long",
+              "note": "full-length rifle in three movements: load, hold, resolve"
+            }
+          ],
+          "pistols": [
+            {
+              "name": "Aria",
+              "note": "the flagship; each barrel voiced individually, the note engraved under the grip"
+            },
+            {
+              "name": "Aria Duet",
+              "note": "matched pair, sold only as pairs, tuned in harmony; separating them voids more than the warranty"
+            },
+            {
+              "name": "Minuet",
+              "note": "the pocket pistol; small steps, correct ones"
+            },
+            {
+              "name": "Cadenza",
+              "note": "target pistol; the trials record is embarrassing for everyone else"
+            },
+            {
+              "name": "Requiem",
+              "note": "the Scarlet pattern; blessed steel, grave manners"
+            },
+            {
+              "name": "Prelude",
+              "note": "the trainer; students learn on real voicing or not at all"
+            },
+            {
+              "name": "Interlude",
+              "note": "compact carry; the pause between movements"
+            },
+            {
+              "name": "Berceuse",
+              "note": "integrally suppressed; the word means lullaby, and the Veil's couriers sleep well"
+            },
+            {
+              "name": "Capriccio",
+              "note": "open-class competition gun; the Atelier's one joke"
+            },
+            {
+              "name": "Madrigal",
+              "note": "the revolver; six voices in polite agreement"
+            }
+          ],
+          "submachine_guns": [
+            {
+              "name": "Tremolo",
+              "note": "their reluctant standard"
+            },
+            {
+              "name": "Staccato Nine",
+              "note": "short, detached, correct"
+            },
+            {
+              "name": "Glissando",
+              "note": "progressive-rate trigger that slides from single notes to a run"
+            },
+            {
+              "name": "Ricercar",
+              "note": "the Veil courier gun; the name means \"to seek out\""
+            },
+            {
+              "name": "Vibrato",
+              "note": "a wartime contract piece the house is quietly embarrassed by and quietly proud of"
+            }
+          ],
+          "belt_fed_light_machine_guns": [
+            {
+              "name": "Crescendo",
+              "note": "sustained-fire gun with a rate that builds by design"
+            },
+            {
+              "name": "Fortissimo",
+              "note": "the loud one; the Atelier's apology is the accuracy"
+            },
+            {
+              "name": "Pedalpoint",
+              "note": "tripod gun with a metronomic governed rate; gunners report it is *calming*, which the Raven has annotated"
+            }
+          ],
+          "tactical_shotguns": [
+            {
+              "name": "Percussion Twelve",
+              "note": "entry gun; the section name was inevitable"
+            },
+            {
+              "name": "Timpani",
+              "note": "magazine-fed; tuned, absurdly, anyway"
+            },
+            {
+              "name": "Coda Breacher",
+              "note": "the ending, applied to doors"
+            }
+          ],
+          "civilian_shotguns": [
+            {
+              "name": "Pastorale",
+              "note": "side-by-side for estates and heirlooms"
+            },
+            {
+              "name": "Lullaby 20",
+              "note": "the quietest production shotgun made; nurseries sleep through proofs"
+            },
+            {
+              "name": "Hymn",
+              "note": "single-shot heirloom gun; confirmation gifts in old families"
+            }
+          ],
+          "designated_marksman_rifles": [
+            {
+              "name": "Recitative",
+              "note": "semi-auto marksman; speaks plainly, once"
+            },
+            {
+              "name": "Aubade",
+              "note": "the dawn rifle of the border watch commissions"
+            },
+            {
+              "name": "Elegy",
+              "note": "the Scarlet marksman pattern; the name is the doctrine"
+            }
+          ],
+          "sniper_rifles": [
+            {
+              "name": "Rest",
+              "note": "the famous silent bolt gun; *a rest is a note you don't play*"
+            },
+            {
+              "name": "Tacet",
+              "note": "the extreme-range piece; house doctrine permits it one shot per engagement, and it has never needed two on the record the house keeps"
+            }
+          ],
+          "unique_maben_types": [
+            {
+              "name": "Tuning Fork",
+              "note": "twin-bore harmonic pistol firing paired rounds a semitone apart; disrupts echoform Presences, which is why the Quiet War carries it"
+            },
+            {
+              "name": "Metronome",
+              "note": "clockwork-governed burst rifle whose mechanical rate cannot be entrained; issued against Threnn-touched cells and Long Measure crews"
+            },
+            {
+              "name": "Bellmouth",
+              "note": "consecrated dragon-mouth gun re-voiced for Griefknot mercy work; Scarlet chaplains sign for them personally"
+            },
+            {
+              "name": "Register Pair",
+              "note": "cased dueling pistols delivered with a tuning key; the case is the contract"
+            },
+            {
+              "name": "the Unstrung",
+              "note": "a rifle with no metal action at all, tensioned composite throughout: **the only production long arm that functions inside a Mhor null zone**, because there is nothing in it for the silence to eat"
+            }
+          ],
+          "unique_heavy_weapons": [
+            {
+              "name": "Organworks",
+              "note": "a multi-barrel volley battery built into a case like its namesake; three commissions, all fortress chapels"
+            },
+            {
+              "name": "Carillon",
+              "note": "harmonic mortar whose rounds ring true intervals; defenders of the faith find it comforting, targets do not"
+            },
+            {
+              "name": "Ophicleide",
+              "note": "a brass shoulder cannon of frankly liturgical excess, built to Scarlet specification for Incarnate response"
+            }
+          ],
+          "legacy_assault_rifles": [
+            {
+              "name": "Etude-1",
+              "note": "the 2250s trials original; the trials committee kept theirs"
+            },
+            {
+              "name": "March",
+              "note": "the house's one mass-war contract, delivered on time and resented in the ledger's own hand"
+            }
+          ],
+          "out_of_date_bolt_rifle": [
+            {
+              "name": "Isolde's Pattern",
+              "note": "the 1820s bolt rifle still ceremonially issued to Shepherd honor guards; every example remains on the Register of Voices, and every one still answers its note"
+            }
+          ],
+          "out_of_date_smg": [
+            {
+              "name": "Polka",
+              "note": "a wartime embarrassment the Atelier spent forty years buying back to destroy; the eleven known survivors are worth estates"
+            }
+          ],
+          "out_of_date_unique": [
+            {
+              "name": "the Duelist's Voicing",
+              "note": "the cased flintlock pair of 1801, tuned to Isolde's own note; the Atelier states, when asked, that both pistols remain accounted for, and declines, when asked, to say where"
+            }
+          ]
+        },
+        "philosophy": "a weapon is an instrument, and an instrument is voiced.",
+        "id": "maben-atelier",
+        "hq": "Old Quarter, Ilreth",
+        "est": "A.V. 1794",
+        "founders": [
+          "Isolde Maben"
+        ],
+        "ownership": "Independent; refused Crown buyout ('The Atelier does not take a second signature')",
+        "scandals": [
+          "Duel Commission affair A.V. 2119",
+          "Stolen Voicing case A.V. 2296 (apprentice defected to Hallowell)"
+        ],
+        "rumors": [
+          "Cantrix voiced on a Maben bench",
+          "Division 13 pieces that hum near Presences",
+          "Register of Voices — ledger the Raven has failed to copy four times",
+          "Century-dead clients' orders still open"
+        ],
+        "customers": [
+          "Scarlet Inquisition",
+          "Council of Silence principals",
+          "Shepherd-adjacent orders",
+          "dueling houses",
+          "one (1) King"
+        ]
+      }
+    ],
+    "status": {
+      "identity_status": "C",
+      "narrative_status": "R",
+      "game_state_status": "n/a",
+      "unfiled": false
+    }
+  },
+  "kestrel_campaign": {
+    "tag": "R",
+    "ruling": "KC1",
+    "game": "sandline",
+    "era": "~A.V. 2325–2326",
+    "accord": {
+      "treaty": "Sandline Accord",
+      "program": "Accord Ranger Program",
+      "conscription": "Crown Territorial Levy"
+    },
+    "squad": {
+      "name": "Kestrel Squad",
+      "company": "Third Expeditionary Ranger Company",
+      "line": [
+        {
+          "role": "squad leader",
+          "ref": "rodar-akai"
+        },
+        {
+          "name": "Josen Marr",
+          "role": "pointman/rifleman",
+          "hook": "Naturally gifted infantryman afraid of what that means",
+          "ref": "josen-marr"
+        },
+        {
+          "id": "essa-vane",
+          "name": "Cpl. Essa Vane",
+          "role": "grenadier (Pattern 70)",
+          "hook": "Ex-quarry blaster; family letters structure the campaign calendar"
+        },
+        {
+          "id": "halvik-dunn",
+          "name": "Halvik Dunn",
+          "role": "breacher",
+          "hook": "Ex-fire brigade; shotgun for locks, shoulders for people"
+        },
+        {
+          "id": "sillae-vekh",
+          "name": "L-Cpl. Sillae Vekh",
+          "role": "marksman (Elven Ranger liaison; VD-2 Farsight)",
+          "hook": "Local conscience, coldest shot; decides these foreigners are hers"
+        },
+        {
+          "id": "brukk-meshan",
+          "name": "Brukk Meshan",
+          "role": "heavy gunner (TF-L67 Ox)",
+          "hook": "Tarkesh diaspora; Wound-steel in enemy hands cuts deepest"
+        },
+        {
+          "id": "dava-ren",
+          "name": "Dava Ren",
+          "role": "medic",
+          "hook": "Furious conscript; her Notebook is the conscience mechanic"
+        },
+        {
+          "id": "fen-ost",
+          "name": "Fenwick 'Fen' Ost",
+          "role": "signals/battery-tech",
+          "hook": "First to notice the strange; first it notices back"
+        }
+      ],
+      "attached": [
+        {
+          "ref": "emrys-ashcombe",
+          "role": "Field Intelligence Officer; the human-intelligence layer"
+        },
+        {
+          "id": "imarra-voss",
+          "name": "Sgt. Imarra Voss",
+          "role": "mentor; wounded Act II; returns as company ops"
+        },
+        {
+          "id": "corven-sayle",
+          "name": "Corven Sayle",
+          "role": "quartermaster-specialist; Division 13's eyes (Act IV reveal)"
+        }
+      ]
+    },
+    "acts": [
+      "I The Levy (conscription/basic tutorial)",
+      "II The Kestrels (squad assembly; Voss wounded; field promotion)",
+      "III The Accord (hostile 'friendlies'; insurgency escalation)",
+      "IV The Strange (Wound-steel Mattocks; Sael-touched cult; Corven reveal; canon Felia crossover)",
+      "V Old Promise (horror climax: the returned river; the well-breaking; Vrikka's severance; see climax block)"
+    ],
+    "grounded_doctrine": {
+      "principle": "Every enemy is a victim of circumstance with a story and a family impacted by their loss",
+      "systems": [
+        "Named dead (no 'hostiles' once named)",
+        "The Notebook (Dava's ledger links enemies to civilians)",
+        "District repercussion",
+        "De-escalation as mastery (surrender/rout rewarded; firing on fleeing costs)",
+        "Insurgency's two faces (political wing vs conducted radicals)"
+      ]
+    },
+    "crossover": {
+      "felia": "canon — Arc I first foreign deployment passes through Act IV"
+    },
+    "insurgency": {
+      "grievance": "The Charter of Wells — goblin settlements hold no well rights; Accord modernization capped marginal wells",
+      "political_wing": {
+        "name": "Assembly of Wells",
+        "leader": {
+          "name": "Matriarch Ottla Brimm",
+          "tag": "R",
+          "notes": "Former duneworks forewoman; condemns bombings by name; mission-giver, never a target",
+          "status": {
+            "identity_status": "C",
+            "narrative_status": "R",
+            "game_state_status": "n/a",
+            "unfiled": false
+          },
+          "ref": "ottla-brimm"
+        }
+      },
+      "radical_wing": {
+        "name": "The Thirst",
+        "leader": {
+          "name": "Warleader Vrikka Half-Well",
+          "tag": "R",
+          "notes": "Ottla's former protégée; conducted unknowingly by the Riverspoken; severance = Act V hardest optional outcome",
+          "status": {
+            "identity_status": "C",
+            "narrative_status": "R",
+            "game_state_status": "n/a",
+            "unfiled": false
+          },
+          "ref": "vrikka-half-well"
+        }
+      },
+      "countrymen": {
+        "tag": "R",
+        "ruling": "KC2",
+        "principle": "Elves and goblins are kin in a family quarrel; both detest the Crown; Crown-attributed kills sour the Kestrels' own allies",
+        "oath": "The Cupbearers' Oath — digger and landholder drink first together at every new well",
+        "elven_subfactions": [
+          {
+            "id": "old-wells-society",
+            "name": "The Old Wells Society",
+            "role": "Elders/retired Rangers/landholders sharing water illegally; fund and legitimize the Assembly"
+          },
+          {
+            "id": "cupbearers",
+            "name": "The Cupbearers",
+            "role": "Young elven militants running supplies, safe-houses, and rifles beside the Thirst"
+          },
+          {
+            "id": "the-leak",
+            "name": "The Leak",
+            "role": "Ranger sympathizers passing patrol routes; Act III subplot — a mole AND a prophecy"
+          }
+        ],
+        "systems": [
+          "Alliance-strain meter (Ranger cooperation degrades with Crown-attributed deaths)",
+          "Countryman vs stranger grief-weight",
+          "Joint funerals (barred or rarely invited)"
+        ],
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "n/a",
+          "unfiled": false
+        }
+      }
+    },
+    "climax": {
+      "tag": "R",
+      "ruling": "KC3",
+      "name": "OLD PROMISE",
+      "final_enemy": {
+        "class": "E (sael-vel)",
+        "grade": "VERSE",
+        "state": "Incarnate — anomalous (Symptom Rule)",
+        "nature": "The returned river; flows uphill through dead beds; contact renders the living Spoken-For; immune to Worldly weapons; the reading survives its reader",
+        "ref": "old-promise"
+      },
+      "dread_ramp": [
+        "Oraclings go silent",
+        "Linewalkers walk without rest",
+        "Living funerals",
+        "The Thirst calls a truce (Countrymen payoff)"
+      ],
+      "horror_mechanics": [
+        "Personal spoken future per squad member (truth uncertain)",
+        "Prophetic UI corruption (objectives precede actions)",
+        "Verse-countdown clock",
+        "Dying cultists whisper the next line",
+        "Rodar's line is silence — the unwritten man"
+      ],
+      "false_victory": "Killing the Cartographer changes nothing; the river continues in his voice",
+      "true_solution": "Break the Charter — Kestrels, Cupbearers, and Thirst blow open the capped wells together; unmapping fractures the True Line; justice as victory condition",
+      "vrikka_severance": "The river speaks her martyrdom; she refuses it — the first Spoken future ever declined",
+      "aftermath": [
+        "One bed stays wet",
+        "Backward recordings = the Cartographer still reading (Inverse Resonance)",
+        "Raven file: OLD PROMISE — STATUS: PATIENT",
+        "OMEGA memo: the working was a rehearsal (Concord/Listening War overture)"
+      ],
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    "aftermath": {
+      "ruling": "NF1",
+      "principle": "Justice reopens the political argument rather than settling it",
+      "open_questions": [
+        "well ownership",
+        "reparations and infrastructure",
+        "Charter amendment vs suspension",
+        "amnesty vs prosecution of the Thirst",
+        "honoring or trying Vrikka",
+        "Crown withdrawal vs abandonment"
+      ],
+      "finale_mode": "Testimony before the joint commission (Dava's Notebook admissible)",
+      "last_line": "Sillae's",
+      "vrikka_branches": {
+        "severed_alive": "trial, amnesty, or political martyrdom — she can speak for herself",
+        "still_conducted": "a containment problem her own people must solve",
+        "dead": "most dangerous — a memory everyone can interpret and nobody can contradict"
+      }
+    },
+    "status": {
+      "identity_status": "C",
+      "narrative_status": "R",
+      "game_state_status": "n/a",
+      "unfiled": false
+    },
+    "systems": {
+      "tag": "G",
+      "ruling": "GS1",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "structure": "Authored spine (19 missions) + rotation pools (13); forward-only, no procedural bosses",
+      "materiel_systems": {
+        "arcane_stress": "Keyed to Veskar cell weapons in ANY hands (supersedes 'Elven Arcane Stress')",
+        "scrap_volatility": "Keyed to scavenged/improvised weapons in ANY hands (supersedes 'Goblin Volatility')",
+        "rationale": "Species-coded mechanics contradicted TR2/KC2/IA1; systems re-keyed to equipment"
+      },
+      "divergence_ledger": "Tracks departure from institutional roles, not virtue; sets the Act V approach; doctrinal play earns Standing and prophecy-prediction instead",
+      "grounded_systems": [
+        "Named Dead (record, never score)",
+        "Dava's Notebook (admissible in testimony)",
+        "District Standing",
+        "Alliance Strain (conduct-driven, with an unclearable floor)",
+        "Two-panel after-action: operation graded, roll reported"
+      ],
+      "act_v_horror": [
+        "Verse Clock",
+        "Prophetic interface corruption",
+        "Spoken-For (surrender prompt absent)",
+        "One spoken future per squad member",
+        "Testimony finale"
+      ],
+      "supply": "Requisition (I&S, logged) vs grey market (Veskar/Tarkesh, untracked, volatility attached)",
+      "combat_doctrine": {
+        "ruling": "GS2",
+        "principle": "A game about war. Combat is the medium; no mission is completable without killing and no scoring treats a firefight as failure.",
+        "two_readouts": {
+          "operation": "GRADED — objective, squad intact, tempo, execution",
+          "the_roll": "REPORTED — names, civilians, prisoners; never scored or subtracted"
+        },
+        "free": "Killing armed combatants in honest combat: 0 Standing, 0 Strain, no rating penalty",
+        "costly_conduct": [
+          "firing on routing/surrendered/wounded",
+          "civilian casualties",
+          "destroying wells, homes, stores, aid",
+          "refusing collection of the dead",
+          "arrests without cause"
+        ],
+        "restraint_priced": "Surrender costs the turn, position, and prisoner management; a spared fighter may or may not return",
+        "no_pacifist_run": "Kill floor per combat mission; some enemies never break; at least one mission punishes hesitation with a squadmate",
+        "unconditional_shunning": "Alliance Strain floor > 0 that no conduct clears — the objection is Crown hands killing Confederacy countrymen at all (KC2). Perfect play earns tolerance, never welcome."
+      },
+      "humint_layer": {
+        "ruling": "KC5",
+        "operative": "emrys-ashcombe",
+        "functions": [
+          "Named Dead enrichment (data becomes consequence)",
+          "Contact rounds per district",
+          "Non-violent interrogation — prisoners yield to him and to no one else",
+          "Riverspoken signature detection ahead of instruments"
+        ],
+        "costs": [
+          "Contact rounds consume squad time",
+          "Standing gained by questioning people under occupation; Sillae logs it"
+        ],
+        "loss_condition": "If he dies the layer dies — names stop arriving and the roll reverts to counting bodies"
+      }
+    },
+    "mission_manifest": {
+      "total": 32,
+      "spine": 19,
+      "rotation": 13,
+      "acts": {
+        "I": "Last Shift (Dray Cross) → Selection Board (6)",
+        "II": "Third Expeditionary → First Contact (6)",
+        "III": "The Handover → Assembly Hall (8)",
+        "IV": "Ghost Shipment → Sayle's Office (7)",
+        "V": "Oraclings Fall Silent → Testimony (6)"
+      }
+    }
+  },
+  "civic": {
+    "tag": "R",
+    "ruling": "CV1",
+    "design_rule": "Nothing in the Civic Codex traces to the Eight",
+    "monarchy": {
+      "king": {
+        "name": "Osric III of House Danterre",
+        "age": 71,
+        "reign": "38 years",
+        "notes": "Anointed (not deeply hereditary); weakening renewal rites = palace view of the cycle failing",
+        "ref": "osric-iii"
+      }
+    },
+    "government": {
+      "legislature": "Moot of Estates (commons + noble bench)",
+      "factions": [
+        {
+          "id": "radiant-party",
+          "lean": "traditionalist, church-aligned"
+        },
+        {
+          "id": "meridian-league",
+          "lean": "modernizers; Lumen Vast money; Glassline expansion"
+        },
+        {
+          "id": "northreach-bloc",
+          "lean": "Northwall repeal, rescue, truth commission"
+        }
+      ],
+      "policies": [
+        {
+          "id": "northwall-edicts",
+          "name": "The Northwall Edicts",
+          "author": "aurel-strand",
+          "effect": "Quarantined the Rifted North; stranded tens of thousands; probably correct by the numbers"
+        },
+        {
+          "id": "open-hand-compacts",
+          "name": "The Open Hand Compacts",
+          "author": "aurel-strand",
+          "effect": "Development-loan satellite diplomacy",
+          "former_name": "harmonic assistance (renamed CV1)",
+          "idiom": "Shake the Open Hand and count your fingers"
+        }
+      ]
+    },
+    "faith": {
+      "church": "Church of the Radiant Hymn",
+      "venues": "choirhouses",
+      "clergy": "cantors",
+      "mechanics": "Massed sincere congregational song works small wonders — the only universal resonance-craft",
+      "afterlife": "The Quiet Chorus",
+      "keeping_tune": "Private hummed identity melody; folk tone-signature; hummed at dusk for the dead",
+      "holy_days": [
+        "Founding Day",
+        "Edict Feast",
+        "Last Hymn Eve (one verse, then silence until dawn)"
+      ]
+    },
+    "songs": [
+      {
+        "id": "counting-rhyme",
+        "title": "Eight Little Birds",
+        "type": "children's rhyme",
+        "note": "Unrecognized folk memory of the Eight"
+      },
+      {
+        "id": "levy-cadence",
+        "title": "Levy marching cadence",
+        "type": "cadence",
+        "note": "Officially discouraged"
+      },
+      {
+        "id": "last-hymn-eve-verse",
+        "title": "Go Gentle Down",
+        "type": "liturgy",
+        "note": "Sung by every household at dusk on Last Hymn Eve"
+      }
+    ],
+    "daily_life": {
+      "currency": [
+        "chime (gold)",
+        "ring (silver)",
+        "bit (copper)"
+      ],
+      "week": "Six days + Restday",
+      "food": [
+        "bellbread (note sung over the proof)",
+        "underlevel skewers",
+        "glasshouse fruit"
+      ],
+      "papers": [
+        "Ilreth Recorder",
+        "the Nightglass (tabloid)"
+      ],
+      "sport": "rondel (walled-court ballgame; terrace chants = largest unsanctioned massed singing)"
+    },
+    "status": {
+      "identity_status": "C",
+      "narrative_status": "R",
+      "game_state_status": "n/a",
+      "unfiled": false
+    }
+  },
+  "loose_drawer": {
+    "tag": "?",
+    "ruling": "MY1",
+    "protection": "No future ruling may resolve an entry; solving one voids it",
+    "annotation": "A world entirely filed would be a world entirely finished",
+    "entries": [
+      {
+        "id": "unnumbered-day",
+        "name": "The Unnumbered Day",
+        "register": "temporal",
+        "summary": "A.V. 1706 contained a day that appears in no calendar; documented, remembered, nonexistent; no residue of any kind"
+      },
+      {
+        "id": "the-address",
+        "name": "The Address",
+        "register": "spatial",
+        "summary": "An ordinary Eclipsera rowhouse every instrument registers as the most important place in the world; Glassmoths rest there; 'Recommend no action. Recommend it forcefully.'"
+      },
+      {
+        "id": "ninth-verse",
+        "name": "The Ninth Verse",
+        "register": "song / symmetry-break",
+        "summary": "Some children sing a ninth verse of the counting rhyme; never the same twice; adults cannot learn it; recordings capture only eight"
+      },
+      {
+        "id": "bee-letters",
+        "name": "The Bee Letters",
+        "register": "absurd",
+        "summary": "Annual unaddressed letter to a random citizen: 'I'm sorry. It was the only way to save the bees.' The bees are fine. Handwriting always matches the recipient's own; 171 confirmed"
+      },
+      {
+        "id": "the-sulk",
+        "name": "The Sulk",
+        "register": "navigational",
+        "summary": "Once a year all compasses point somewhere that is not north, in perfect agreement, for an irregular duration; nobody has gone to look"
+      },
+      {
+        "id": "dusk-tune",
+        "name": "The Dusk Tune",
+        "register": "tender",
+        "summary": "A keeping-tune no one is humming, recognized by no family, always new; the file declines to speculate whose"
+      },
+      {
+        "id": "third-sketch",
+        "name": "The Third Sketch",
+        "register": "celestial",
+        "summary": "The two-moon night of A.V. 977; every artist who drew the sky that night independently drew three"
+      }
+    ],
+    "status": {
+      "identity_status": "P",
+      "narrative_status": "P",
+      "game_state_status": "n/a",
+      "unfiled": true
+    }
+  },
+  "rulings_log": [
+    {
+      "id": "R1",
+      "decision": "Union merge of four Codex editions; MD spine + MA appendices",
+      "date": "2026-08-15",
+      "sequence": 1,
+      "kind": "canon"
+    },
+    {
+      "id": "R2",
+      "decision": "Chronological Codex = in-world scripture; facts merged",
+      "date": "2026-08-15",
+      "sequence": 2,
+      "kind": "canon"
+    },
+    {
+      "id": "R3",
+      "decision": "Appendix Ψ adopted as canonical timeline skeleton",
+      "date": "2026-08-15",
+      "sequence": 3,
+      "kind": "canon"
+    },
+    {
+      "id": "R4",
+      "decision": "Detailed reading wins among same-generation source variants ONLY",
+      "date": "2026-08-15",
+      "notes": "Demoted by CP1/CR1 — never outranks later rulings",
+      "sequence": 4,
+      "kind": "canon"
+    },
+    {
+      "id": "R5",
+      "decision": "Byte-identical duplicates excluded",
+      "date": "2026-08-15",
+      "sequence": 5,
+      "kind": "canon"
+    },
+    {
+      "id": "C1",
+      "decision": "DE history = deliberate Crown propaganda; calendars unconvertible by design",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "public-history",
+        "aurelion"
+      ],
+      "sequence": 6,
+      "kind": "canon"
+    },
+    {
+      "id": "C2",
+      "decision": "Three-tier divinity: Source > Architect > Eight",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "the-source",
+        "the-architect",
+        "old-gods",
+        "anharas-ilrien"
+      ],
+      "sequence": 7,
+      "kind": "canon"
+    },
+    {
+      "id": "C3",
+      "decision": "Eclipsera ≠ Erevale; Confederacy dossier promoted",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "eclipsera",
+        "erevale",
+        "desert-elf-confederacy"
+      ],
+      "sequence": 8,
+      "kind": "canon"
+    },
+    {
+      "id": "C4",
+      "decision": "Appendices A–E rebuilt",
+      "date": "2026-08-15",
+      "sequence": 9,
+      "kind": "canon"
+    },
+    {
+      "id": "C5",
+      "decision": "SANDLINE (then Sand & Sorcery) set in Confederacy, modern era",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "sandline"
+      ],
+      "sequence": 10,
+      "kind": "canon"
+    },
+    {
+      "id": "B3.1",
+      "decision": "Goblin Insurgency + Elven Rangers canonized",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "goblin-insurgents",
+        "elven-rangers"
+      ],
+      "sequence": 11,
+      "kind": "canon"
+    },
+    {
+      "id": "B3.2",
+      "decision": "Doctrine manuals converted to in-world sourcing",
+      "date": "2026-08-15",
+      "sequence": 12,
+      "kind": "canon"
+    },
+    {
+      "id": "B3.3",
+      "decision": "Unified resonance system; three engineering traditions",
+      "date": "2026-08-15",
+      "sequence": 13,
+      "kind": "canon"
+    },
+    {
+      "id": "B3.4",
+      "decision": "Game state preserved as [G]; promotion requires ruling",
+      "date": "2026-08-15",
+      "notes": "CR1 later stripped raw session chatter from canon",
+      "sequence": 14,
+      "kind": "canon"
+    },
+    {
+      "id": "OG1",
+      "decision": "Eight Old Gods ratified: triadic scheme, interlocks",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "old-gods"
+      ],
+      "sequence": 15,
+      "kind": "canon"
+    },
+    {
+      "id": "P1",
+      "decision": "PROVISIONAL: Serin Veyra = Serin Valenne (cover surname)",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "serin-veyra"
+      ],
+      "sequence": 16,
+      "kind": "provisional"
+    },
+    {
+      "id": "P2",
+      "decision": "PROVISIONAL: Thalen Mirecourt = Shepherd and Vizier",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "thalen-mirecourt"
+      ],
+      "sequence": 17,
+      "kind": "provisional"
+    },
+    {
+      "id": "EC1",
+      "decision": "Empty Choir doctrine; Twelve completed (8 Witnesses + 4 Keepers)",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "twelve-shepherds",
+        "first-verse",
+        "sanctum-requiel"
+      ],
+      "sequence": 18,
+      "kind": "canon"
+    },
+    {
+      "id": "AR1",
+      "decision": "Arc I threat: the Concord, Ninth Chair, third answer, Undersong",
+      "date": "2026-08-15",
+      "supersedes": [
+        "EC1.open_question"
+      ],
+      "affected_entities": [
+        "kael-tharanis",
+        "echo",
+        "the-concord"
+      ],
+      "sequence": 19,
+      "kind": "canon"
+    },
+    {
+      "id": "TR1",
+      "decision": "Northern Continuum: null zones + folded zones",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "glass-wound",
+        "infinite-north"
+      ],
+      "sequence": 20,
+      "kind": "canon"
+    },
+    {
+      "id": "TR2",
+      "decision": "Goblins as species; insurgency political",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "goblin-insurgents"
+      ],
+      "sequence": 21,
+      "kind": "canon"
+    },
+    {
+      "id": "TR3",
+      "decision": "Listening War = Whispers threat; Felia concludes Echo's story",
+      "date": "2026-08-15",
+      "sequence": 22,
+      "kind": "canon"
+    },
+    {
+      "id": "TR4",
+      "decision": "Felia 22 / mid-30s; 'centuries' non-canon",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "felia-wynshade"
+      ],
+      "sequence": 23,
+      "kind": "canon"
+    },
+    {
+      "id": "TR5",
+      "decision": "Saga ratified: Book IX, three arcs",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "felia-wynshade",
+        "serin-veyra",
+        "tobbin-fenn"
+      ],
+      "sequence": 24,
+      "kind": "canon"
+    },
+    {
+      "id": "TR6",
+      "decision": "Names ratified: Varet, Fenn, Sunrise Knight, Open Rose, Perch/Pip",
+      "date": "2026-08-15",
+      "sequence": 25,
+      "kind": "canon"
+    },
+    {
+      "id": "BX1",
+      "decision": "Threatform Codex: Three Wars, Gradient, God-Touched, Arsenal",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "scarlet-inquisition"
+      ],
+      "sequence": 26,
+      "kind": "canon"
+    },
+    {
+      "id": "GC1",
+      "decision": "Gutter Choirs: eight street cult factions",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "eclipsera"
+      ],
+      "sequence": 27,
+      "kind": "canon"
+    },
+    {
+      "id": "AW1",
+      "decision": "Armory: five manufacturers, 260-arm register",
+      "date": "2026-08-15",
+      "sequence": 28,
+      "kind": "canon"
+    },
+    {
+      "id": "KC1",
+      "decision": "Rodar Akai + Kestrel Campaign + Grounded Doctrine + canon Felia crossover",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "rodar-akai",
+        "felia-wynshade"
+      ],
+      "sequence": 29,
+      "kind": "canon"
+    },
+    {
+      "id": "KC2",
+      "decision": "Insurgency leadership + Countrymen + Riverspoken + SANDLINE rename",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "ottla-brimm",
+        "vrikka-half-well",
+        "the-cartographer",
+        "sandline"
+      ],
+      "sequence": 30,
+      "kind": "canon"
+    },
+    {
+      "id": "KC3",
+      "decision": "OLD PROMISE horror climax; entry 13; severance beat designed",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "old-promise",
+        "vrikka-half-well"
+      ],
+      "sequence": 31,
+      "kind": "canon"
+    },
+    {
+      "id": "CV1",
+      "decision": "Civic Codex: Osric III, Strand, Council heads, faith, songs, daily life",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "osric-iii",
+        "aurel-strand"
+      ],
+      "sequence": 32,
+      "kind": "canon"
+    },
+    {
+      "id": "MY1",
+      "decision": "Loose Drawer: seven [?] Unfiled mysteries; permanent non-resolution",
+      "date": "2026-08-15",
+      "notes": "Explanation proposals declined, including from the world's authors",
+      "sequence": 33,
+      "kind": "canon"
+    },
+    {
+      "id": "EV1",
+      "decision": "Echo's voice document RAV-A0-V6-007",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "echo",
+        "lys-nareth",
+        "denner"
+      ],
+      "sequence": 34,
+      "kind": "narrative"
+    },
+    {
+      "id": "CP1",
+      "decision": "Canon precedence: latest ruling > reconciled doctrine > source prose",
+      "date": "2026-08-15",
+      "supersedes": [
+        "R4 (scope)"
+      ],
+      "sequence": 35,
+      "kind": "editorial"
+    },
+    {
+      "id": "CR1",
+      "decision": "Critique reconciliation: chronology repairs (6M/30K, Shepherds 0/450, Irregular Cycle, Veil 450/570/579, Vornis+Varin, 3→4→5 Orders); Ascension narrowed to the Ascended class; Echo Wound doctrine; unwritten softened; Kael's philosophy (stewardship-as-original-sin over grief); Arc I scars (Long Listening, Felia's lost silence) + contested sainthood; Serin's falsified report in Arc I; Arc III memory-vs-meaning; Harmonic Dominion obsolete; house style codified; artifacts stripped; single-source three-target architecture",
+      "date": "2026-08-15",
+      "supersedes": [
+        "R4 (precedence)"
+      ],
+      "affected_entities": [
+        "felia-wynshade",
+        "serin-veyra",
+        "kael-tharanis",
+        "cale-varin",
+        "caer-vornis",
+        "anharas-ilrien",
+        "echo"
+      ],
+      "sequence": 36,
+      "kind": "continuity"
+    },
+    {
+      "id": "CR2",
+      "decision": "Editorial normalization: legacy prose rewritten; Eclipsera/Arclight ruled (core city vs Megacity Sector-09 conurbation); 13 Divisions/43 Directorates; monarchy civil-vs-metaphysical; Arc III Rhen-Vel demoted to suspicion; Kael syllogism to narrative-function field; Nash function ruled/motive open; citation debris scrubbed (edu-class TLD fix); versions synchronized; ledger schema finished; posture: dramatize, don't reconcile",
+      "date": "2026-08-15",
+      "supersedes": [
+        "B3.2 (completion)"
+      ],
+      "affected_entities": [
+        "eclipsera",
+        "corbel-nash",
+        "serin-veyra",
+        "kael-tharanis"
+      ],
+      "sequence": 37,
+      "kind": "continuity"
+    },
+    {
+      "id": "CR2.1",
+      "decision": "Build normalization: re-applied 12 CR2 patches lost to a pre-write exception in the CR2 script; added lint pass (footnote digits, concatenations, dangling citation punctuation); annex converted fully to in-world sourcing (Morcant Jungle Campaign replaces external references); Felia game-state cross-references retargeted to the Operational Annexes; ledger collection roles named; automated verification harness added (28 assertions run against the built artifacts)",
+      "date": "2026-08-15",
+      "supersedes": [
+        "CR2 (execution)"
+      ],
+      "notes": "Root cause: assert-then-write with no atomicity and no post-write verification. Harness now runs on every build.",
+      "sequence": 38,
+      "kind": "build"
+    },
+    {
+      "id": "NF1",
+      "decision": "Narrative repairs: Rodar's unreadability earned via player-tracked deviations; Tobbin given pre-Felia play origin, a consequential winning argument (Open Rose sleep-on-it rule), and saint-refusal function; Ansel given independent conflict (synthesis vs perfection) and apprentice Wren Callis; SANDLINE aftermath reopens the political argument with a testimony finale; Arc III given protagonists (Maera Sill, Corbin Ost), a proof event (the dead Rite of the Rest), and the Sunrise Compact as the good-wrong final test",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "rodar-akai",
+        "tobbin-fenn",
+        "ansel-varet",
+        "felia-wynshade",
+        "sunrise-compact",
+        "maera-sill",
+        "corbin-ost"
+      ],
+      "sequence": 39,
+      "kind": "narrative"
+    },
+    {
+      "id": "BH1",
+      "decision": "Build hygiene: version metadata split into canon_edition/canon_revision/build_revision/narrative_revision and synchronized across artifacts; status objects normalized across every collection (orders, places, events, threats, bestiary, armory); open_question fields restructured to {status, resolution, ruling}; Felia game-state cross-reference retargeted to the Operational Annexes; six orphan citation parens removed by stack scan (list markers preserved); 13 sentence joins repaired",
+      "date": "2026-08-15",
+      "notes": "Two failed approaches discarded first: per-line and excess-count paren repair both damaged legitimate text across hard-wrapped lines.",
+      "sequence": 40,
+      "kind": "build"
+    },
+    {
+      "id": "CR3",
+      "decision": "Silent Rose founded in Anharas's early reign and repurposed by the Vanishing; Division 13's Mirror Sector predates the A.V. 2149 Arclight designation; 'Shepherd-marked' = blessed by the Twelve, not among them; Kael redesignated pre-Wound seam-containment; Doctrine of the Two Crowns (glyph declares renewal of embodied authority, not royal death — Osric civil, Echo metaphysical)",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "silent-rose",
+        "division-13",
+        "cale-varin",
+        "kael-tharanis",
+        "osric-iii",
+        "echo"
+      ],
+      "sequence": 41,
+      "kind": "continuity"
+    },
+    {
+      "id": "NF2",
+      "decision": "Tobbin's Halloway contract argument defined; Serin restored against erasure; Rodar tracks divergence not virtue with doctrinal compensations; Ansel's philosophy corrected to agency-not-imperfection with Wren genuinely right; Rite of the Rest turns on congregational response; Sunrise Compact made good and costly; Maera given personal stake; Corbin given migration authority and a paying lineage; Strand no longer narrated as correct; Vrikka aftermath branched; four design counterweights ratified",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "tobbin-fenn",
+        "serin-veyra",
+        "rodar-akai",
+        "ansel-varet",
+        "maera-sill",
+        "corbin-ost",
+        "sunrise-compact",
+        "aurel-strand",
+        "vrikka-half-well"
+      ],
+      "sequence": 42,
+      "kind": "narrative"
+    },
+    {
+      "id": "IA1",
+      "decision": "Vine Tactical Manual species doctrine reconciled with TR2/KC2/Book X.1 by conversion, not deletion: Raven Doctrine Desk Field Errata marks the sections superseded, restates corrected doctrine as irregular-vs-conventional opposition, and records Liaison-Captain Vethra Sollin's standing A.V. 2319 objection. Contradiction becomes institutional characterization and a reverse counterweight (institutions wrong in ways individuals see first).",
+      "date": "2026-08-15",
+      "supersedes": [
+        "VFM-23-8 nonhuman-adversary sections"
+      ],
+      "affected_entities": [
+        "vine",
+        "elven-rangers",
+        "goblin-insurgents"
+      ],
+      "sequence": 43,
+      "kind": "integration"
+    },
+    {
+      "id": "SC1",
+      "decision": "Scenes established as a fourth build target (Veil_Scenes.md), dramatized canon with narrative-tier precedence over doctrine blocks on interior states. First entry: Scene 1, The Two Crowns — Osric and Echo, dramatizing the copybook meeting already recorded in RAV-A0-V6-007.",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "osric-iii",
+        "echo"
+      ],
+      "sequence": 44,
+      "kind": "narrative"
+    },
+    {
+      "id": "EN1",
+      "decision": "Engineering integrity: canonical-source-set architecture replaces the false single-source claim; build.py extended to full pipeline; harness upgraded to structural schema validation scoped to entity collections with duplicate-ID and changelog-parity checks; semantic status fields separated from canon-state status; unfiled mandatory; cross-references use ref; Scene 1 'eleven centuries' corrected and post-dialogue explanation trimmed; scene precedence narrowed to interior state",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "silent-rose",
+        "old-promise",
+        "scene-01-two-crowns"
+      ],
+      "sequence": 45,
+      "kind": "engineering"
+    },
+    {
+      "id": "EN2",
+      "sequence": 46,
+      "kind": "engineering",
+      "decision": "Package integrity: changelog reordered to exact ruling sequence with ordered-parity assertion; sequence and kind added to all rulings; rodar_sprite.png restored to the package with a build-time resource preflight; DOCX generation now fails the build loudly (--no-docx for dev); ref-resolution validation; status validation extended to every canonical collection via centralized discovery; timeline anchor validation; scene ID parity; explicit UTF-8 throughout; revision parsed from master rather than hardcoded. Editorial pass EH1 (deletion scars, orphan numerals, malformed emphasis, import artifacts) and micro-language pass NF2.1 (dared not; self-executing not self-renewing; familial never romantic; counterweight tags removed from body prose; narrator no longer certifies Tobbin or Pryce; Register of Voices reframed as provenance-absolute rather than unchanging).",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "rodar-akai",
+        "the-architect",
+        "first-verse",
+        "serin-veyra",
+        "tobbin-fenn",
+        "wilhelmina-pryce"
+      ]
+    },
+    {
+      "id": "EN2.1",
+      "sequence": 47,
+      "kind": "engineering",
+      "decision": "Harness truthfulness and publication cleanup: lint loop variables renamed for clarity (probe confirmed the loop always searched content, not labels — the reported bug was a misreading invited by bad naming); lint patterns widened to catch joined numbered lists, comma/em-dash collisions, mismatched emphasis, and compiler artifacts, with truncated sampling; ref resolution now validates against canonical entity IDs only; scenes carry machine-readable IDs with exact ledger parity; engineering_revision and latest_ruling_sequence added to package metadata. Editorial: veil-skin emphasis, stave.6 list join, Register em-dash scar, Tobbin comma-dash, canonical-update artifact, Felia deployment heading, orphan Sources heading. Narrator adjudication removed from Tobbin ('the dead are not part of the price') and Strand (the projections argue, not the narrator). IA1's species doctrine bracketed BEGIN/END SUPERSEDED DOCTRINE. Open-items list moved out of the ruling sequence into CURRENT OPEN CANON QUESTIONS.",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "tobbin-fenn",
+        "aurel-strand",
+        "scene-01-two-crowns"
+      ]
+    },
+    {
+      "id": "EN2.2",
+      "sequence": 48,
+      "kind": "engineering",
+      "decision": "Metadata closure: latest_ruling_sequence and engineering_revision are now derived by build.py rather than hand-maintained, and README.md is generated from the ledger so declared counts cannot drift; canon_precedence converted from a stale pre-SC1 prose string to structured five-rank data including scene canon; harness gained derived-metadata, contiguous-sequence (range 1..N), and README-parity invariants; IA1's superseded-doctrine bracket expanded to enclose the entire goblin/orc subsection rather than its final 15%. Build architecture frozen.",
+      "date": "2026-08-15",
+      "affected_entities": []
+    },
+    {
+      "id": "SC2",
+      "sequence": 49,
+      "kind": "narrative",
+      "decision": "Scene 2, The Halloway Contract, added: the founding-year argument dramatized with both cases intact — Tobbin's ('every city too weak to stop us lives by our permission'; 'we would be a good one, that's the part that frightens me') and Felia's ('the people dying this winter do not care what precedent saves us in ten years'). Neither is adjudicated. New minor canon: Anneke Roud of Pellhurst, Governor Denning Halloway, the Sennet League, the Open Rose's first chapter house. The sleep-on-it rule is born on-page as a delay rather than a decision.",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "felia-wynshade",
+        "tobbin-fenn",
+        "anneke-roud",
+        "denning-halloway"
+      ]
+    },
+    {
+      "id": "GS1",
+      "sequence": 50,
+      "kind": "integration",
+      "decision": "SANDLINE systems specification and campaign mission manifest added. Two integration defects in the original design document resolved: (1) species-coded resource systems ('Elven Arcane Stress', 'Goblin Volatility') re-keyed to materiel — Arcane Stress follows Veskar cells and Scrap Volatility follows scavenged weapons, in any hands, per TR2/KC2/IA1; (2) the procedural five-layer node graph reconciled with the authored five-act campaign as an authored spine with rotation pools between spine missions. Grounded Doctrine converted from stated intent into systems: Named Dead, the Notebook, District Standing, Alliance Strain (Crown-attributed kills only), de-escalation scoring. Divergence Ledger specified with doctrinal-play compensation so neither build dominates. Act V horror systems, squad class mapping with bond tracks, and dual supply channels specified. 32-mission manifest across five acts.",
+      "date": "2026-08-15",
+      "affected_entities": [
+        "rodar-akai",
+        "sillae-vekh",
+        "josen-marr",
+        "sandline"
+      ]
+    },
+    {
+      "id": "RM1",
+      "sequence": 51,
+      "kind": "integration",
+      "decision": "ThinShot repository assessed and adopted as the SANDLINE implementation. Mechanical precedence inverted: the shipped Godot build outranks the Sand & Sorcery design document and the GS1 systems specification for mechanics, because its systems are implemented and play-tuned while the specs are not; the Codex retains absolute precedence over fiction, naming, factions, and doctrine. The Goblin Rust Choir framing is struck as a TR2/KC2/IA1 violation and reframed as the Thirst (sprites retained, framing replaced); Desert Scouts become Kestrel Squad. The repo's permadeath-with-garrison-replacement attrition model is adopted as canonical, superseding GS1 SS.7. Annex VIII.2 to be rewritten to describe the actual build (move-once/shoot-once, adjacency cover, magazines and fire modes) rather than the unbuilt AP/D20 spec. Five-phase conversion roadmap issued.",
+      "date": "2026-08-16",
+      "affected_entities": [
+        "sandline",
+        "goblin-insurgents",
+        "rodar-akai",
+        "brukk-meshan"
+      ]
+    },
+    {
+      "id": "RM4",
+      "sequence": 52,
+      "kind": "integration",
+      "decision": "The Cartographer is canonically the surveyor-collector of ThinShot's Operation Second Verse. The repository independently invented an antagonist 'at the end of the tracks' who keeps surveyors alive 'because somebody wanted the maps in their heads'; canon's Riverspoken are led by the Confederacy's former survey-master who mapped the dead watercourses for forty years. These are the same character, and the repo's version is adopted rather than overwritten. Operation Second Verse becomes SANDLINE's on-ramp to Act IV.",
+      "date": "2026-08-16",
+      "affected_entities": [
+        "the-cartographer",
+        "riverspoken",
+        "sandline"
+      ]
+    },
+    {
+      "id": "RM5",
+      "sequence": 53,
+      "kind": "engineering",
+      "decision": "Rules.gd is the canonical home of SANDLINE combat arithmetic. Any Grounded Doctrine mechanic expressible as a number belongs there with an assertion in test_rules.gd; the Codex will not respecify in prose what the module states in code. Extends RM1's mechanical precedence from 'the build outranks the spec' to 'the build is the spec'.",
+      "date": "2026-08-16",
+      "affected_entities": [
+        "sandline"
+      ]
+    },
+    {
+      "id": "RM6",
+      "sequence": 54,
+      "kind": "integration",
+      "decision": "Canon integration plan issued for the SANDLINE repository. Governing split reaffirmed: fiction conforms to the Codex, mechanics conform to the build. Hard constraint recorded from the codebase itself — Kind and TEAM_* ordinals are persisted in save files, so renaming may never reorder them; new kinds are appended and the save version climbed. Ruled that goblin identifiers, enum members, and sprite paths are RETAINED: canon governs player-visible text, not developer identifiers, and the Thirst are goblins — the error corrected by IA1/KC2 was the rabble framing, never the species. Faction relabelling is concentrated in the single Unit.kind_role_name() match block. Five phases: rename (no test may change result), Grounded Doctrine (Named Dead, surrender/rout, contacts-resolved scoring, the Notebook on save v3, bystanders reusing prisoner plumbing, Standing and Strain), the six remaining Kestrels, the Strange via the Cartographer, and Old Promise.",
+      "date": "2026-08-16",
+      "affected_entities": [
+        "sandline",
+        "goblin-insurgents",
+        "rodar-akai",
+        "sillae-vekh",
+        "the-cartographer"
+      ]
+    },
+    {
+      "id": "GS2",
+      "sequence": 55,
+      "kind": "integration",
+      "decision": "Combat doctrine corrected against pacifist-optimum drift. GS1 SS.5's 'fewest names added to the roll' scoring made every kill a point deduction, told the player a clean firefight was a partial failure, and gave them a reason to optimise against grief rather than read the names. Replaced structurally: the military outcome is graded, the human cost is reported, and the two are never summed. Killing armed combatants in honest combat costs nothing; only chosen conduct costs. Restraint is priced (turn, position, prisoner obligation) so it stays a decision. No pacifist run: kill floors, unbreakable enemy classes, and at least one mission where hesitation kills a squadmate and the drill is right. Alliance Strain carries a floor no conduct clears — perfect play earns tolerance, never welcome, because the objection is that Crown hands are killing Confederacy countrymen at all.",
+      "date": "2026-08-16",
+      "affected_entities": [
+        "sandline",
+        "josen-marr",
+        "sillae-vekh"
+      ]
+    },
+    {
+      "id": "RM7",
+      "sequence": 56,
+      "kind": "narrative",
+      "decision": "Complete canon rewrites authored for all seven shipped missions (Appendix A of the integration plan): fiction, briefing, orders, and debrief for each, with no mechanical field touched. The Charter of Wells becomes the reason for every mission in Operation Dry Well; the Rangers' souring is carried in the text of The Long Haul, where the squad burns a water column in a country that has argued about wells for three centuries. The repo's Crown depot mark and canon's Tarkesh Wound-steel Mattocks are unified rather than chosen between — Crown crates containing factory-new Tarkesh rifles from a foundry unwritten in A.V. 1983 — which merges the shipped mystery with the Act IV hook. The Choirmaster becomes THE SURVEY CAMP and its objective END THE READING; the Cartographer is present by absence, his forty years of survey annotated into a schedule, and he is not among the bodies. Per GS2 no briefing implies the killing was avoidable and no debrief grades the player.",
+      "date": "2026-08-16",
+      "affected_entities": [
+        "sandline",
+        "the-cartographer",
+        "goblin-insurgents",
+        "sillae-vekh"
+      ]
+    },
+    {
+      "id": "QT1",
+      "sequence": 57,
+      "kind": "canon",
+      "decision": "The Quiet Tax adopted as canon and filed in the Scenes volume as a complete short story (A.V. 2324, one year before the glyph hesitates). It uses existing canon correctly and adds to it. New canon ratified: the Raven LISTENER discipline — operatives who measure resonance loss by ear, report attenuation as a percentage, and at the height of the discipline end a working with one correct tone; the Hushfolk cups as ANCHORS rather than mere drains, giving the Quiet War a containment method (break the cups, un-anchor the Almoner); the Almoner's sewn mouth and the thread that snaps; Quietors in ordinary clothes with no weapons; the failure of Veil runecraft under null-adjacent interference and the brick that worked instead, adopted as a fifth design counterweight; the Queen's Garden's operational sandwiches and its creative accounting (sixty-three chimes from storm-water displacement mitigation to house nine people, over Raven objection to the code); the erasure of a constabulary report between 03:17 and 03:41; and the low C of a passing Glassline tram, which every Eclipsera child knows before the national anthem. New figures: Corren Vey, Mara Sen, Aven Draal, Patrolman Edrin Vale.",
+      "date": "2026-08-19",
+      "affected_entities": [
+        "hushfolk",
+        "raven",
+        "queens-garden",
+        "division-13",
+        "eclipsera"
+      ]
+    },
+    {
+      "id": "KC4",
+      "sequence": 58,
+      "kind": "canon",
+      "decision": "Rodar Akai origin, temperament, and the hometown thread. Author-supplied ruling adopted; filed as KC4 because the submitted ID (KC2) was already assigned to the Countrymen/Riverspoken ruling. Amends KC1 without replacing it. Rodar's civilian occupation canonized as warehouse hand at the Dray Cross freight yards, which pays off diegetically in Act IV when he reads the Wound-steel crates as a dock hand and recognizes the missing paper trail as the evidence. His induction temperament canonized as a boot who wanted the letter — abrasive in speech, decent in deed, ignorance never cruelty — with the arc running loud boot to quiet contact survivor to reluctant leader, the promotion landing after the shell cracks. Rodar and Brukk Meshan share a hometown but not a street: starting friction rather than starting friendship, with Rodar carrying secondhand interior-town condescension he does not know he holds. New location Dray Cross (name provisional): Crown-interior rail and canal junction with a Tarkesh-diaspora quarter from the post-1980 dispersals — the war does not come there, it takes people from there. New opening mission Last Shift added to the manifest; Brukk's Act II bond mission routed through home. Josen Marr rider ratified: with Rodar he forms the axis of desire without gift against gift without desire.",
+      "date": "2026-08-19",
+      "affected_entities": [
+        "rodar-akai",
+        "brukk-meshan",
+        "josen-marr",
+        "dray-cross",
+        "sandline"
+      ]
+    },
+    {
+      "id": "KC5",
+      "sequence": 59,
+      "kind": "canon",
+      "decision": "Inspector Emrys Ashcombe canonized: elf, 214, forty-one years in the Eclipsera Constabulary, conscripted under the Levy because a clerk matched a skill code for first-hand human intelligence, and seconded to the Accord Ranger Program as Field Intelligence Officer attached to Kestrel Squad — attached rather than line, preserving KC1's eight. He is the diegetic source of the Grounded Doctrine's content: Named Dead enrichment, contact rounds, non-violent interrogation that makes accepting surrender practically rather than morally advantageous, and Riverspoken early warning. Design edge ratified: the skill that humanises the enemy is the skill that finds him, and he makes killing informed rather than avoidable (GS2-compliant). Frictions established with Sillae Vekh (belonging versus technique) and with the Confederacy at large, for whom a Crown elf is harder to forgive than a human occupier. Structurally he is Corven Sayle's camouflage — the squad never wonders about the quartermaster because it already has an intelligence officer — and he alone is unsurprised by the Act IV reveal. Carries an unresolved hook: an A.V. 2319 Eclipsera case he closed as ordinary crime that was a Hushfolk working (QT1). Permadeath applies; his loss removes the intelligence layer for the remainder of the campaign.",
+      "date": "2026-08-23",
+      "affected_entities": [
+        "emrys-ashcombe",
+        "sillae-vekh",
+        "corven-sayle",
+        "rodar-akai",
+        "sandline"
+      ]
+    }
+  ],
+  "rulings_legacy_strings": {
+    "deprecated": true,
+    "note": "Superseded by rulings_log; retained for provenance only",
+    "strings": [
+      "R1 union merge",
+      "R2 chronological codex = in-world scripture + fact merge",
+      "R3 Appendix Ψ timeline adopted",
+      "R4 detailed reading wins on wording",
+      "R5 duplicates dropped",
+      "C1 DE history = Crown propaganda (diegetic)",
+      "C2 three-tier divinity",
+      "C3 Eclipsera ≠ Erevale; Confederacy promoted",
+      "C4 appendices rebuilt",
+      "C5 Sand & Sorcery = Confederacy theater",
+      "B3.1 Goblin Insurgency canonized",
+      "B3.2 doctrine citations scrubbed",
+      "B3.3 unified resonance system",
+      "B3.4 game state preserved as [G]",
+      "OG1 Eight Old Gods ratified",
+      "P1 PROVISIONAL Veyra=Valenne",
+      "P2 PROVISIONAL Mirecourt unified",
+      "EC1 Empty Choir doctrine + Twelve completed (8 Tone Witnesses, 4 Keepers)",
+      "TR1 Northern Continuum",
+      "TR2 goblins as species",
+      "TR3 Listening War = Whispers threat; Felia concludes Echo's story",
+      "TR4 Felia 22/mid-30s; 'centuries' non-canon",
+      "TR5 Saga ratified (Book IX)",
+      "TR6 names ratified",
+      "AR1 Arc I threat: the Concord, the Ninth Chair, the third answer, the Undersong",
+      "BX1 Threatform Codex: Three Wars, Instantiation Gradient, God-Touched, Scarlet Arsenal, First Catalogue",
+      "GC1 Gutter Choirs: eight street cult factions with enemy kits and tells",
+      "AW1 Armory: five manufacturers, 260-arm civil register",
+      "KC1 Rodar Akai + Kestrel Campaign + Grounded Doctrine + canon Felia crossover",
+      "KC2 Insurgency leadership + Countrymen nuance + elven sub-factions + Riverspoken + SANDLINE rename",
+      "KC3 OLD PROMISE horror climax; Second Catalogue entry 13; Vrikka severance beat designed",
+      "CV1 Civic Codex: King Osric III, First Minister Strand (Northwall Edicts, Open Hand Compacts), Council heads, Church of the Radiant Hymn, keeping-tunes, three canonical songs, daily life",
+      "MY1 The Loose Drawer: seven [?] Unfiled mysteries; permanent non-resolution protection; eight-fold symmetry deliberately broken",
+      "EV1 Echo's voice document (RAV-A0-V6-007)"
+    ]
+  },
+  "events_annotated": [
+    {
+      "id": "rebellion-old-gods",
+      "name": "Rebellion of the Old Gods",
+      "date": "~30,000 B.A.V.",
+      "tag": "C",
+      "public_history_name": "The Divine War (ruling C1)",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "first-verse",
+      "name": "The First Verse / the Vanishing",
+      "date": "A.V. 450",
+      "tag": "C",
+      "public_history_name": "Aurelion's Last Hymn",
+      "note": "Installation of the standing stewardship ordinance; Shepherd Cycle formalized same year (ruling EC1)",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "siege-of-thorns",
+      "name": "Siege of Thorns",
+      "date": "A.V. 570",
+      "tag": "C",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "tribunal-compact",
+      "name": "Tribunal Compact",
+      "date": "A.V. 575",
+      "tag": "C",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "poisoned-river-war",
+      "name": "War of the Poisoned River",
+      "date": "A.V. 1950–1983",
+      "tag": "C",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "day-screaming-water",
+      "name": "Day of Screaming Water",
+      "date": "A.V. 1980",
+      "tag": "C",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "seraphim-zero",
+      "name": "Seraphim Zero detonation",
+      "date": "A.V. 1983",
+      "tag": "C",
+      "note": "Possible Mhor-Vel invocation [R]",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "ascension-protocol",
+      "name": "Ascension Protocol enacted",
+      "date": "A.V. 1984",
+      "tag": "C",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "echo-crowned",
+      "name": "The Echo Crowned",
+      "date": "A.V. 2325",
+      "tag": "C",
+      "note": "Amendment of the First Verse — first new note since Anharas (ruling EC1)",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "C",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "listening-war",
+      "name": "The Listening War (Arc I)",
+      "date": "~A.V. 2325–2328",
+      "tag": "D",
+      "note": "The Concord vs the amended Verse; concluded by removal of the Ninth Chair (AR1); ends in plane-crossing, meeting with Anharas, ordination of Saint Felia",
+      "status": {
+        "identity_status": "D",
+        "narrative_status": "D",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "open-rose-founding",
+      "name": "Founding of the Order of the Open Rose (Arc II)",
+      "date": "~A.V. 2338",
+      "tag": "D",
+      "status": {
+        "identity_status": "D",
+        "narrative_status": "D",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    },
+    {
+      "id": "memory-of-light",
+      "name": "The Memory of Light (Arc III)",
+      "date": "centuries after A.V. 2345",
+      "tag": "D/P",
+      "note": "The forgetting; flagged link to Rhen-Vel unruled",
+      "status": {
+        "identity_status": "D",
+        "narrative_status": "D",
+        "game_state_status": "n/a",
+        "unfiled": false
+      }
+    }
+  ],
+  "events_timeline": {
+    "source": "Appendix A (canonical master timeline)",
+    "generated": true,
+    "entries": [
+      {
+        "date": "~23M B.A.V.",
+        "event": "Old Gods created by the Architect as sub-shapers of the world-lattice"
+      },
+      {
+        "date": "~6M B.A.V.",
+        "event": "The Architect forbids the Old Gods from interfering with mortal evolution"
+      },
+      {
+        "date": "~30,000 B.A.V.",
+        "event": "Rebellion of the Old Gods; monsters enter the world (Vess-Vel); the casting-out"
+      },
+      {
+        "date": "~50 B.A.V.",
+        "event": "Birth of Anharas (harmonic act of the Source)"
+      },
+      {
+        "date": "0 A.V.",
+        "event": "Anharas crowned; Ilreth era begins"
+      },
+      {
+        "date": "450 A.V.",
+        "event": "First Verse sung; Anharas vanishes; Shepherd Cycle formalized"
+      },
+      {
+        "date": "450 A.V.",
+        "event": "The theological principle that will become the Veil begins with the Verse and its tuners"
+      },
+      {
+        "date": "570–575 A.V.",
+        "event": "Siege of Thorns; death of the Silent Rose; Caer Vornis convenes the first Tribunal; covert successor Orders (Steel, Scarlet, Raven) form"
+      },
+      {
+        "date": "579 A.V.",
+        "event": "Cale Varin codifies the Tribunal Compact and the Ethics of Severance; the Word of the King is elevated to fourth Order; the federation takes the institutional name **the Veil**"
+      },
+      {
+        "date": "1200–1800 A.V.",
+        "event": "The Raven and the Glass Tower era"
+      },
+      {
+        "date": "1650 A.V.",
+        "event": "Queen's Garden recognized as full Order"
+      },
+      {
+        "date": "1901 A.V.",
+        "event": "Grathul Mokh'tar begins unification of Tarkesh Vale; rise of the Caliphate of Iron Roots"
+      },
+      {
+        "date": "1950–1983 A.V.",
+        "event": "War of the Poisoned River"
+      },
+      {
+        "date": "1980 A.V.",
+        "event": "Day of Screaming Water (Emberwake misaligned by RDEO)"
+      },
+      {
+        "date": "1983 A.V.",
+        "event": "Seraphim Zero sung; the Glass Wound born; the war ends"
+      },
+      {
+        "date": "1984 A.V.",
+        "event": "Ascension Protocol enacted"
+      },
+      {
+        "date": "2000+ A.V.",
+        "event": "The Rifted North; rise of Erevale"
+      },
+      {
+        "date": "2325 A.V.",
+        "event": "Crown glyph hesitates; Echo emerges; Sanctum Requiel awakens; the Echo Crowned"
+      },
+      {
+        "date": "2326+ A.V.",
+        "event": "Second Breath projections; Listening War indicators; the Silence That Watches"
+      },
+      {
+        "date": "~2325–2328 A.V.",
+        "event": "Arc I: the Listening War fought and concluded; Felia crosses the planes; ordination of Saint Felia [D]"
+      },
+      {
+        "date": "~2325–2326 A.V.",
+        "event": "The Kestrel Campaign: Rodar Akai and the Accord Ranger Program in the Confederacy theater; Felia crossover in Act IV [R]"
+      },
+      {
+        "date": "~2338–2345 A.V.",
+        "event": "Arc II: founding of the Order of the Open Rose; the Tobbin Fenn years; *The Sunrise Knight* found [D]"
+      },
+      {
+        "date": "centuries hence",
+        "event": "Arc III: the Memory of Light — the forgetting; Felia's departure into the north [D/P]"
+      }
+    ]
+  },
+  "design_counterweights": {
+    "tag": "R",
+    "ruling": "NF2",
+    "status": {
+      "identity_status": "C",
+      "narrative_status": "R",
+      "game_state_status": "n/a",
+      "unfiled": false
+    },
+    "principle": "The question is 'when does stewardship become authorship', not 'are systems bad'. Assume the thesis needs an opponent.",
+    "instances": [
+      {
+        "claim": "An institution preserves meaning better than living memory — the Maben ledger survives the Arc III forgetting intact because it was never improved or migrated",
+        "instance_id": "register-of-voices"
+      },
+      {
+        "claim": "Obedience beats instinct — Josen holds the drill against Rodar's instinct in Act III and is right",
+        "ref": "josen-marr"
+      },
+      {
+        "claim": "Standardization as mercy at scale — a protocol a mediocre practitioner can follow saves more lives than an uncopyable genius",
+        "ref": "wilhelmina-pryce"
+      },
+      {
+        "claim": "A rule whose reason is forgotten is still a good rule — it saves Maera's chapter in Arc III, unchanged and unexplained",
+        "instance_id": "sleep-on-it-rule"
+      }
+    ]
+  },
+  "scenes": {
+    "tag": "C",
+    "ruling": "SC1",
+    "status": {
+      "identity_status": "C",
+      "narrative_status": "C",
+      "game_state_status": "n/a",
+      "unfiled": false
+    },
+    "volume": "Veil_Scenes.md — authoritative dramatized narrative source",
+    "precedence": "Interior state: scene governs. External/metaphysical fact: doctrine governs unless a later ruling says otherwise.",
+    "entries": [
+      {
+        "id": "scene-01-two-crowns",
+        "title": "The Two Crowns",
+        "date_in_world": "A.V. 2325, Ilreth",
+        "dramatizes": "RAV-A0-V6-007 copybook marginalia (the King asks if the songs are breaking)",
+        "figures": [
+          "osric-iii",
+          "echo",
+          "denner"
+        ],
+        "canon_touchpoints": [
+          "CR3 Two Crowns",
+          "Book XI.1 lengthening renewal rites",
+          "Book XI.6 daily life",
+          "EV1 Echo voice"
+        ],
+        "note": "Adds no new public-event or cosmological facts; expands an established meeting through canon interiority"
+      },
+      {
+        "id": "scene-02-the-halloway-contract",
+        "title": "The Halloway Contract",
+        "date_in_world": "A.V. 2339, Eclipsera",
+        "dramatizes": "NF1/NF2 — the founding-year contract argument; origin of the Open Rose sleep-on-it rule",
+        "figures": [
+          "felia-wynshade",
+          "tobbin-fenn"
+        ],
+        "canon_touchpoints": [
+          "NF1 Tobbin consequential choice",
+          "NF2 Halloway framing",
+          "CR1 Felia's lost silence",
+          "CR1 contested sainthood",
+          "TR5 Open Rose founding"
+        ],
+        "note": "Neither argument is adjudicated by scene, world, or narrator; Halloway holds office two more years"
+      },
+      {
+        "id": "story-01-the-quiet-tax",
+        "title": "The Quiet Tax",
+        "date_in_world": "A.V. 2324, Eclipsera / Arclight Sprawl",
+        "dramatizes": "GC1 the Hushfolk; Mhor-Vel containment",
+        "form": "complete short story",
+        "figures": [
+          "corren-vey",
+          "mara-sen",
+          "aven-draal",
+          "edrin-vale"
+        ],
+        "canon_touchpoints": [
+          "GC1 Hushfolk",
+          "CR2 Mirror Sector / Arclight",
+          "BX1 Quiet War",
+          "CV1 chimes, Perch Coffee",
+          "IA1-adjacent register doctrine"
+        ],
+        "note": "Author-written; establishes Raven Listeners, attenuation measurement, cups-as-anchors, and the brick"
+      }
+    ]
+  },
+  "implementation": {
+    "tag": "G",
+    "ruling": "RM1",
+    "status": {
+      "identity_status": "C",
+      "narrative_status": "R",
+      "game_state_status": "G",
+      "unfiled": false
+    },
+    "repo": "github.com/bfunkmcgee/ThinShot",
+    "engine": "Godot 4.7 / GDScript",
+    "assessed": "2026-08-16 (rev 2, commit acc516c)",
+    "state": "Working thin slice: 7,466 LOC, 6 missions, 2 operations, persistent squad with permadeath, two walkable camps, 10,595 asset files",
+    "precedence": "Mechanics: shipped implementation outranks VIII.2 design doc and GS1 spec. Fiction/naming/factions/doctrine: Codex outranks repo absolutely.",
+    "keep": [
+      "Adjacency cover with facing, wedges, leaning",
+      "Move-once/shoot-once turn model",
+      "Fire modes, magazines, reload-costs-move",
+      "Sector overwatch and area suppression",
+      "Grenade pool (frag/smoke)",
+      "Destructible props and chain detonation",
+      "Data-driven levels with boot validator",
+      "Operations/missions with briefing-debrief",
+      "Permadeath with garrison-only replacement",
+      "Two-camp walkaround",
+      "Biome plumbing"
+    ],
+    "rebuild": [
+      "Goblin Rust Choir framing (violates TR2/KC2/IA1)",
+      "Desert Scouts identity (should be Kestrel Squad)",
+      "5-soldier roster (canon is 8)",
+      "Kill-scored after-action"
+    ],
+    "build_new": [
+      "Named Dead",
+      "Surrender/rout/morale",
+      "Civilians (art already present, unused)",
+      "Notebook",
+      "District Standing",
+      "Alliance Strain",
+      "Divergence Ledger",
+      "Materiel volatility systems",
+      "Acts I-II",
+      "Riverspoken",
+      "Act V horror",
+      "Testimony finale"
+    ],
+    "roadmap": "Phase 0 ground truth; 1 rename; 2 Grounded Doctrine; 3 squad+structure; 4 the Strange; 5 Old Promise",
+    "commits": 89,
+    "loc": 10485,
+    "engineering": [
+      "Rules.gd — static, testable combat arithmetic (single source for displayed vs rolled odds)",
+      "~208 assertions across test_rules/test_progression/test_save_load",
+      "check_cover_rules sweeps all shipped maps",
+      "Versioned saves with migration ladder; refuses unreadable overwrite",
+      "Campaign seed + derived battle_seed + separate hit-roll RNG stream",
+      "Validated PixelLab floor pipeline, TileCatalog, FloorLayer"
+    ],
+    "canon_already_adopted": [
+      "Rodar Akai is the player HERO unit: own sprites, own perk tree, mission-loss on his death"
+    ],
+    "civilians": "BUILT — THE HOLDING PENS: rescue objective, unarmed move-4 prisoners, freed by adjacency, must be walked out; excluded from living_soldiers()",
+    "missions": 7,
+    "perks": "24 across 3 class trees (Scout/Machinegunner/Hero)",
+    "remaining_blocker": "Goblin Rust Choir framing (TR2/KC2/IA1) + Desert Scouts naming",
+    "integration_plan": {
+      "ruling": "RM6",
+      "document": "SANDLINE_Canon_Integration_Plan.md",
+      "governing_rule": "Fiction conforms to the Codex; mechanics conform to the build (RM1/RM5)",
+      "hard_constraint": "Kind and TEAM_* enum ordinals are persisted in saves — append only, never reorder; climb SAVE_VERSION when adding kinds",
+      "keep_identifiers": "goblin/GOBLIN_* enum members, data keys, and sprite paths are retained; canon governs player-visible text, not developer identifiers. The Thirst ARE goblins — the error was the rabble framing, never the species.",
+      "faction_rename": {
+        "Rust Choir Chorister": "Thirst Well-hand",
+        "Rust Choir Raider": "Thirst Runner",
+        "Rust Choir Skirmisher": "Thirst Light Runner",
+        "Rust Choir Novice": "Pressed Conscript",
+        "Rust Choir Cantor": "Thirst Marksman",
+        "Scout Team Lead": "Kestrel Team Lead",
+        "Scout Machinegunner": "Kestrel Machinegunner",
+        "Desert Scout": "Kestrel Rifleman",
+        "Rodar Akai, Hero of the Scouts": "Rodar Akai, Kestrel Squad"
+      },
+      "operations": {
+        "OPERATION DRY CHOIR": "OPERATION DRY WELL",
+        "OPERATION SECOND VERSE": "OPERATION LONG SURVEY",
+        "THE CHOIRMASTER": "THE SURVEY CAMP"
+      },
+      "sequencing": [
+        "Never reorder enums",
+        "Surrender before Spoken-For",
+        "Sillae with or before Alliance Strain",
+        "Named Dead before the Notebook",
+        "Numeric rules land in Rules.gd with assertions",
+        "Phase 1 must not change a single test result"
+      ],
+      "definition_of_done": "No player-visible text contradicts the Codex; the enemy has names and motives; a mission can be completed without killing; the after-action counts contacts resolved; a civilian can die and the game notices; the Long Survey trail leads to the Cartographer",
+      "mission_text": {
+        "ruling": "RM7",
+        "location": "Appendix A of the integration plan",
+        "scope": "Drop-in fiction/briefing/orders/debrief for all 7 shipped missions; no objective, spawn, map, or stat change",
+        "reconciliation": "Crown depot mark (repo) + Tarkesh Wound-steel Mattocks (canon GS1) unified: Crown crates, Tarkesh rifles, factory-new from a foundry unwritten in A.V. 1983",
+        "renames": {
+          "OPERATION DRY CHOIR": "OPERATION DRY WELL",
+          "OPERATION SECOND VERSE": "OPERATION LONG SURVEY",
+          "THE CHOIRMASTER": "THE SURVEY CAMP",
+          "LEAVE NOBODY SINGING": "END THE READING",
+          "ammo dumps": "ammo stores"
+        },
+        "arc": "Capped wells → tallied crates → guns that should not exist → a depot off the maps → water hauled 40 miles → a dry riverbed walked like a road → surveyors kept for the maps in their heads → a dead watercourse pegged out as though someone intended to fill it"
+      }
+    }
+  }
+}
