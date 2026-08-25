@@ -1,0 +1,72 @@
+name: canon
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: rebuild + invariants
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11" # scripts are stdlib-only
+
+      - name: Rebuild generated targets (markdown only)
+        working-directory: codex
+        run: python3 build.py --no-docx
+
+      - name: Committed files must match a fresh rebuild exactly
+        run: |
+          git diff --exit-code || {
+            echo "::error::Generated files are stale or hand-edited (or ledger meta drift). Fix: cd codex && python3 build.py --no-docx, then commit the result."
+            exit 1
+          }
+
+      - name: No untracked build outputs
+        run: |
+          untracked="$(git ls-files --others --exclude-standard)"
+          if [ -n "$untracked" ]; then
+            echo "::error::Build produced untracked files:"; echo "$untracked"; exit 1
+          fi
+
+      - name: Canon harness (Tier 1 blocking, Tier 2 advisory)
+        working-directory: codex
+        run: python3 harness.py # exits 1 unless INVARIANTS: PASS
+
+  docx:
+    name: DOCX artifacts (pandoc)
+    needs: validate
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+
+      - name: Full build (markdown + docx)
+        working-directory: codex
+        run: python3 build.py
+
+      - name: Text outputs must still be byte-stable
+        run: git diff --exit-code -- "*.md" "*.json" # docx bytes vary by pandoc version; never diffed
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: veil-codex-docx
+          path: codex/*.docx
+          if-no-files-found: error

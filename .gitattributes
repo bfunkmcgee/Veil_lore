@@ -1,0 +1,14 @@
+# harness.py byte-compares generated targets against a fresh rebuild;
+# the whole tree is LF-only. Never let CRLF in.
+* text=auto eol=lf
+*.md    text eol=lf
+*.json  text eol=lf
+*.py    text eol=lf
+*.yml   text eol=lf
+*.png   binary
+*.docx  binary
+
+# Derived files: collapse in PR diffs so review focuses on source edits.
+codex/README.md                   linguist-generated=true
+codex/Veil_Core_World_Bible.md    linguist-generated=true
+codex/Veil_Operational_Annexes.md linguist-generated=true

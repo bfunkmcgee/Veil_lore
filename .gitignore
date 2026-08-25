@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Generated DOCX are CI workflow artifacts, never tracked files.
+codex/*.docx
