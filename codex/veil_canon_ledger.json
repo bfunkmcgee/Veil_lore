@@ -98,7 +98,7 @@
       "rationale": "Build correctness and story quality must not share a test"
     },
     "engineering_revision": "RM5",
-    "latest_ruling_sequence": 59
+    "latest_ruling_sequence": 70
   },
   "cosmology": {
     "tiers": [
@@ -964,6 +964,213 @@
       },
       "as_soldier": "Poor with a rifle; the squad arranges itself to keep him alive; permadeath applies and losing him kills the intelligence layer",
       "closed_case": "A.V. 2319 Eclipsera file closed as ordinary crime — an underpass, a row of cups, three deaths blamed on exposure. It was a Hushfolk working. He does not know."
+    },
+    {
+      "id": "ilyas-tehrun",
+      "name": "Ilyas Tehrun",
+      "tag": "R",
+      "ruling": "LN2",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "species": "desert elf",
+      "role": "The Sareth family's enforcer for thirty years; formerly an Elven Ranger of Noon Company; the hero of the Long Night",
+      "era": "Noon Company from A.V. 2274; walked out 2290; the Sareths' from about 2291; the Long Night and Act I, A.V. 2321",
+      "look": "Looks early thirties; gold lines from the wrists to the collar, one burned out to a dull scar",
+      "kit": "The arc-blade and a hip dagger; on the Long Night a coat lined with Ranger mithril-weave and a Veskar VS-8 'Scour' in the bike's saddle scabbard",
+      "affiliation": {
+        "ref": "sareth-family"
+      },
+      "former_unit": {
+        "ref": "noon-company"
+      },
+      "game": {
+        "ref": "the-long-night"
+      },
+      "state_after": "Right arm lost at the shoulder and the lattice dark under the null (LN5); in the Pit, fighting with the dagger in his left hand"
+    },
+    {
+      "id": "auden-hallowell",
+      "name": "Auden Hallowell",
+      "tag": "R",
+      "ruling": "LN4",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "species": "elf",
+      "role": "Son of Perrin Hallowell, founder of Hallowell Arms; Lumen Vast board member; the target of the Long Night",
+      "company": "Hallowell Arms Company (armory: hallowell-arms), a Lumen Vast Holdings brand since A.V. 2301",
+      "trade": "The Gutter Dumping trade into the underlevels; every Constabulary badge between the farm edge and his tower bought",
+      "kit": "Fine Print, a sword-cane that stays on the desk; he never fights",
+      "seat": {
+        "ref": "hallowell-tower"
+      },
+      "fate": "Beheaded in his office on the Long Night, A.V. 2321; of the game's two endings canon keeps this one (LN4)"
+    },
+    {
+      "id": "man-in-white",
+      "name": "The man in white",
+      "tag": "R",
+      "ruling": "LN3",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "role": "The Sareth family's cleaner; never named; fired the null-rim round on the roof of Hallowell Tower",
+      "affiliation": {
+        "ref": "sareth-family"
+      },
+      "weapon": {
+        "ref": "null-rim-round"
+      }
+    },
+    {
+      "id": "qadir-mell",
+      "name": "Qadir Mell",
+      "tag": "R",
+      "ruling": "LN8",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "species": "elf",
+      "role": "Ran the Lantern Bistro for Hallowell; Ilyas's oldest friend, who drank from the Sareth cup the same year and kept the family's stop under the Lantern for decades until Hallowell bought him",
+      "kit": "Last Orders, a coral-inlaid greataxe",
+      "fate": "Fell in the street outside his own front door on the Long Night, A.V. 2321",
+      "site": {
+        "ref": "lantern-bistro"
+      }
+    },
+    {
+      "id": "kade",
+      "name": "Kade",
+      "tag": "R",
+      "ruling": "LN8",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "species": "elf",
+      "role": "Auden Hallowell's head of security",
+      "kit": "Severance, a black longsword with a crimson inlay and hawk-wing quillons"
+    },
+    {
+      "id": "sable",
+      "name": "Sable",
+      "tag": "R",
+      "ruling": "LN8",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "species": "elf",
+      "role": "Head of Hallowell Tower's lobby security, over three human guards",
+      "kit": "Clearance, a silver-hilted longsword"
+    },
+    {
+      "id": "ixet",
+      "name": "Ixet",
+      "tag": "R",
+      "ruling": "LN8",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "species": "lizard-folk",
+      "role": "Exile from the Mountain Sultanate; kept the Line goblins at the Deep Station",
+      "kit": "A cleaver-glaive, and his tail",
+      "keeps": {
+        "ref": "line-goblins"
+      }
+    },
+    {
+      "id": "tamm-broadhand",
+      "name": "Tamm Broadhand",
+      "tag": "R",
+      "ruling": "LN7",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "species": "orc",
+      "role": "Keeps the Sump on the Pit's Floor; teaches Ilyas Short Hand",
+      "lineage": "Tarkesh diaspora; her grandparents came south in the Poisoned River dispersals, and her grandfather, one-handed, kept a fish stall in the Pit for forty years",
+      "style": {
+        "ref": "short-hand"
+      },
+      "site": {
+        "ref": "the-pit"
+      }
+    },
+    {
+      "id": "nim-dry-cup",
+      "name": "Nim Dry-Cup",
+      "tag": "R",
+      "ruling": "LN7",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "species": "goblin",
+      "role": "Keeps the Sump's pumps running and a pump-parts stall on the Shelf",
+      "origin": "The Confederacy duneworks; her taken name is the cup her settlement was never offered",
+      "site": {
+        "ref": "the-pit"
+      }
+    },
+    {
+      "id": "dob",
+      "name": "Dob",
+      "tag": "R",
+      "ruling": "LN7",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "species": "human",
+      "role": "A kid who climbs the Pit's walls for scrap and keeps pigeons on the Sump's roof, which he sells to Tamm's kitchen",
+      "site": {
+        "ref": "the-pit"
+      }
+    },
+    {
+      "id": "osgood-tarr",
+      "name": "Osgood Tarr, the Pump King",
+      "tag": "R",
+      "ruling": "LN6",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "role": "Slum lord of the Pit: owns its only clean pumps and sells water by the bucket",
+      "economy": "Pump chits (water paper) pass for money in the Pit; his collectors wear his blue on a rag round the arm and take a water toll on goods, a chit a bag",
+      "site": {
+        "ref": "the-pit"
+      }
     }
   ],
   "orders": [
@@ -1317,6 +1524,102 @@
       "notes": "Rail and canal interchange serving the agricultural east; freight, warehousing, cartage; Tarkesh-diaspora quarter from the post-1980 dispersals. The war does not come here; this is where it takes people from.",
       "name_status": "PROVISIONAL — pending author ratification; alternate 'Vellin Cross' not recommended (ninth V-name)",
       "ruling": "KC4"
+    },
+    {
+      "id": "hallowell-tower",
+      "name": "Hallowell Tower",
+      "tag": "R",
+      "ruling": "LN4",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "type": "tower in the Tower District, Eclipsera",
+      "parent": {
+        "ref": "eclipsera"
+      },
+      "notes": "Ringed in cyan light with a gold H on its face; a marble lobby on the executive floor; the office at the top, with glass behind the desk; a helipad on the roof; a freight cage up from the Deep Station; the Pit at its foot"
+    },
+    {
+      "id": "the-pit",
+      "name": "The Pit",
+      "tag": "R",
+      "ruling": "LN6",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "type": "slum in Eclipsera's old stone quarry, below the Tower District",
+      "parent": {
+        "ref": "eclipsera"
+      },
+      "tiers": [
+        "the Floor",
+        "the stair-streets (the Lane stair, the Shelf stair)",
+        "the Shelf, a market on a broad ledge halfway up the wall",
+        "the Rim, under the tower's foot"
+      ],
+      "sites": [
+        "the Sump, a bar of boards and tin on the Floor",
+        "Tarr's pumphouse",
+        "the spike high on the far wall"
+      ],
+      "notes": "The city's street register in small: a choirhouse, the Mendery's door, a rondel court, tracts and the Nightglass, a numbers board, a silent row with tin cups. Ruled texture: no congregation coordinates and the GC1 flag is not raised (LN6). Nobody in the Pit calls the Constabulary."
+    },
+    {
+      "id": "cistern-quarter",
+      "name": "The Cistern Quarter",
+      "tag": "R",
+      "ruling": "LN3",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "n/a",
+        "unfiled": false
+      },
+      "type": "Sareth quarter of Eclipsera's underlevels",
+      "parent": {
+        "ref": "eclipsera"
+      },
+      "notes": "Where the Sareth family runs the underlevels' smuggling from"
+    },
+    {
+      "id": "sareth-line",
+      "name": "The Sareth line",
+      "tag": "R",
+      "ruling": "LN3",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "type": "smuggling railway under the Arclight Sprawl",
+      "parent": {
+        "ref": "eclipsera"
+      },
+      "notes": "Older than the Glassline on that side of the city; once carried Confederacy goods under the streets; the family's stop under the Lantern Bistro; its last station, the Deep Station, under Hallowell Tower and held by Hallowell's people; a feral goblin band nests in its disused tunnels"
+    },
+    {
+      "id": "lantern-bistro",
+      "name": "The Lantern Bistro",
+      "tag": "R",
+      "ruling": "LN3",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "type": "restaurant on Lamplight Street, Eclipsera",
+      "parent": {
+        "ref": "eclipsera"
+      },
+      "notes": "Run by Qadir Mell for Hallowell; the family's stop on the Sareth line lies beneath it, reached by a private lift behind a tiled wall in the kitchen"
     }
   ],
   "factions_modern": [
@@ -1358,6 +1661,60 @@
         "game_state_status": "n/a",
         "unfiled": false
       }
+    },
+    {
+      "id": "sareth-family",
+      "name": "The Sareth family",
+      "tag": "R",
+      "ruling": "LN3",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "allegiance": "none (a syndicate of Confederacy expatriates)",
+      "base": {
+        "ref": "cistern-quarter"
+      },
+      "notes": "Desert-elf syndicate running Eclipsera's underlevel smuggling; members swear on the family's cup, a criminal echo of the Cupbearers' Oath; owns the Sareth line; keeps a helicopter; its cleaner is the man in white"
+    },
+    {
+      "id": "noon-company",
+      "name": "Noon Company",
+      "tag": "R",
+      "ruling": "LN2",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "allegiance": "Desert Elf Confederacy",
+      "parent": {
+        "ref": "elven-rangers"
+      },
+      "notes": "The only Ranger cohort ever gilded: forty volunteers inked with a V-cell lattice in A.V. 2274; most dead of Mana Burn within three years, the deaths filed with the Overdrive recalls; pattern books sealed 2277; the survivors called lamps"
+    },
+    {
+      "id": "line-goblins",
+      "name": "The Line goblins",
+      "tag": "R",
+      "ruling": "LN8",
+      "status": {
+        "identity_status": "C",
+        "narrative_status": "R",
+        "game_state_status": "G",
+        "unfiled": false
+      },
+      "allegiance": "none",
+      "relation": {
+        "ref": "northern-feral-goblins"
+      },
+      "keeper": {
+        "ref": "ixet"
+      },
+      "notes": "A feral Northern Continuum band trapped in the shallows and sold south; nested in the disused tunnels of the Sareth line. A population, not the species (TR2)."
     }
   ],
   "systems": {
@@ -1397,6 +1754,111 @@
           "game_state_status": "G",
           "unfiled": false
         }
+      },
+      {
+        "id": "the-long-night",
+        "name": "The Long Night (the Ilyas game)",
+        "tag": "G",
+        "ruling": "LN1",
+        "contents": "Turn-based melee RPG in one browser page: dice decide each exchange and procedural ragdolls act it out. The prologue (Sundown, Stages I to XI, the Platform and the Fall), Act I in the Pit, and the skirmish lab",
+        "working_title": "Ragdoll Skirmish Lab",
+        "repo": "github.com/bfunkmcgee/ilyas",
+        "engine": "Plain JavaScript on one canvas page; procedural 2D ragdolls on a 2.5D floor",
+        "assessed": "2026-11-06 (V95, commit 17f2970)",
+        "state": "Prologue built; Act I beats 1 and 2 (nine scenes) built; beats 3 to 5 proposed (LN11)",
+        "fiction_source": "Ragdoll Skirmish: Veil Synopsis (author's document, 2026-10-21)",
+        "precedence": "Mechanics: the shipped build. Fiction, naming, factions and doctrine: the Codex (the RM1/RM6 split).",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "G",
+          "unfiled": false
+        }
+      }
+    ],
+    "fighting_styles": [
+      {
+        "id": "short-hand",
+        "name": "Short Hand",
+        "tag": "R",
+        "ruling": "LN9",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "G",
+          "unfiled": false
+        },
+        "weapon": "A dagger, one hand",
+        "origin": "Caliphate soldiers who lost hands and arms in the War of the Poisoned River (A.V. 1950 to 1983), after the dispersals; named by the Tarkesh veterans",
+        "doctrine": "Your feet are your other hand.",
+        "moves": [
+          "the Hinge",
+          "the Wrist toll",
+          "the Short ladder",
+          "the Blind-side check",
+          "the Ankle hook"
+        ],
+        "teacher": {
+          "ref": "tamm-broadhand"
+        }
+      },
+      {
+        "id": "wire-drill",
+        "name": "The Wire drill",
+        "tag": "R",
+        "ruling": "LN10",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "G",
+          "unfiled": false
+        },
+        "weapon": "The arc-blade, two hands; needs the gilt",
+        "origin": "Noon Company, on the Confederacy's border wire, the 2270s",
+        "doctrine": "Hold the line. The wire does not go to the man; he comes to it.",
+        "signature": "The Long count",
+        "unit": {
+          "ref": "noon-company"
+        }
+      },
+      {
+        "id": "sareth-cut",
+        "name": "The Sareth cut",
+        "tag": "R",
+        "ruling": "LN10",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "G",
+          "unfiled": false
+        },
+        "weapon": "The arc-blade or a sword, two hands",
+        "origin": "Thirty years of Eclipsera enforcement for the Sareths",
+        "doctrine": "Do the job, and nothing past it.",
+        "family": {
+          "ref": "sareth-family"
+        }
+      },
+      {
+        "id": "order-drill",
+        "name": "The Order drill",
+        "tag": "R",
+        "ruling": "LN10",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "G",
+          "unfiled": false
+        },
+        "weapon": "A steel expandable baton, one hand",
+        "origin": "The Eclipsera Constabulary's public-order course, cut to forty hours and sold to the city's security firms, with Crown Territorial Levy basic's hand-to-hand",
+        "doctrine": "Keep the gap, keep your partner, and go home.",
+        "ranks": [
+          "the fence",
+          "the baton push",
+          "the arm bar"
+        ],
+        "mastery": "none: the course stops at the arm bar"
       }
     ]
   },
@@ -1617,6 +2079,52 @@
           "game_state_status": "n/a",
           "unfiled": false
         }
+      },
+      {
+        "id": "arc-blade",
+        "name": "Ilyas's arc-blade",
+        "tag": "R",
+        "ruling": "LN2",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "G",
+          "unfiled": false
+        },
+        "owner": {
+          "ref": "ilyas-tehrun"
+        },
+        "notes": "Nine blued plates that unroll from the hilt and lock rigid on a thread of V-cell current from the gilt; for one stroke the plates can unlock and lash out past any normal reach; its edges are gilded; under the null, nine loose plates that will not lock"
+      },
+      {
+        "id": "null-rim-round",
+        "name": "The null-rim round",
+        "tag": "R",
+        "ruling": "LN5",
+        "status": {
+          "identity_status": "C",
+          "narrative_status": "R",
+          "game_state_status": "G",
+          "unfiled": false
+        },
+        "maker": "Fired from one pistol of a cased Maben Register Pair (armory: maben-atelier)",
+        "notes": "A single round quenched at a null rim; its voicing climbs as it comes up to charge; through a gilded body it takes the null with it, and the null stays"
+      },
+      {
+        "id": "scrap-arm",
+        "name": "The scrap arm",
+        "tag": "P",
+        "ruling": "LN11",
+        "status": {
+          "identity_status": "P",
+          "narrative_status": "P",
+          "game_state_status": "n/a",
+          "unfiled": false
+        },
+        "maker": {
+          "ref": "nim-dry-cup"
+        },
+        "notes": "Proposed: an arm with no cell in it (tension cables, springs, a ratchet hand, drive gears from recalled Hallowell Doorbell turrets); grips, braces, throws and hits like a hammer; jams; has to be wound"
       }
     ],
     "brands": [
@@ -4598,6 +5106,154 @@
         "rodar-akai",
         "sandline"
       ]
+    },
+    {
+      "id": "LN1",
+      "sequence": 60,
+      "kind": "integration",
+      "decision": "The Ilyas repository (github.com/bfunkmcgee/ilyas; working title Ragdoll Skirmish Lab) is adopted as a Veil game layer: a turn-based melee RPG in one browser page, in which dice decide each exchange and procedural ragdolls act the result out. Its story is a prologue, The Long Night, set in Eclipsera on one night of A.V. 2321, and Act I, the Pit, whose built scenes cover the six weeks after; beside the story it keeps a skirmish lab of free fights. Its fiction source is the author's Ragdoll Skirmish: Veil Synopsis (2026-10-21), whose table of new material is filed as LN2 to LN11 together with what the build has added since. The RM1/RM6 split governs: fiction, naming, factions and doctrine conform to the Codex; mechanics conform to the build, which outranks any design text for them. Player-visible names carry the synopsis's collision fixes: Kael to Ilyas against Kael Tharanis, Mara to Amri against Mara Sen, Vargo to Qadir, Vosk to Ixet and Varn to Doran against V-name crowding, and Halloran to Hallowell. The code keeps Kael as its own word for the hero, as RM6 kept SANDLINE's identifiers. Recorded as game state [G] in Book VIII.4: the stages and scenes, tempo and balance pips, the arc-blade's stances and lash, the workings and their costs, Aether, Overdrive, levels 1 to 100 and style expertise 1 to 20, the signature weapons, and the finale's choice to spare or behead Auden Hallowell, of which canon keeps the beheading (LN4). Assessed at V95, commit 17f2970.",
+      "date": "2026-11-06",
+      "affected_entities": [
+        "the-long-night",
+        "ilyas-tehrun"
+      ]
+    },
+    {
+      "id": "LN2",
+      "sequence": 61,
+      "kind": "canon",
+      "decision": "Ilyas Tehrun is a desert elf, the Sareth family's enforcer for thirty years, who looks early thirties because elves age slowly. Before that he was an Elven Ranger of Noon Company, the only Ranger cohort ever gilded. In A.V. 2274 Ranger armorers went after the weakest part of a battery rifle, a cell that can be dropped, emptied or taken, and made the body the cell: forty volunteers had a V-cell lattice inked into them in drawn gold wire, routed by hand along each one's own nerves, no two patterns alike. It worked, and then it burned. A gilded body has no cell bay to vent, so Mana Burn takes the wearer instead of the weapon, and within three years most of the company had cooked from the inside. The deaths were filed with the Overdrive recalls (VII.4.3) as training accidents and the pattern books sealed in A.V. 2277; nobody has drawn the lattice since. The survivors stayed in service, attached to nothing and watched by everyone, and other Rangers call them lamps, half salute and half pity: a lamp gives light by burning, and it burns out. Ilyas walked out in A.V. 2290, the year the Confederacy passed its statute against selling its edge. He was a piece of that edge, and he sold it to the Sareths: thirty years before the Long Night he drank from their cup. Gold lines run from his wrists to his collar, and where he once pushed too hard a line has burned out to a dull scar. Clarified: all Ranger kit carries arcane gold circuitry (V.5.1), and Noon Company alone carried it in the body. The gilt is Confederacy battery-tech (VII.0) in the nerves. It locks his arc-blade, nine blued plates that unroll from the hilt and lock rigid on a thread of V-cell current, and it powers his workings, of which canon names three: the Gilt bolt, the Gale and the Glimmer step. Aether is the game's word for the gilt's charge, and the game's further workings are game state (LN1). Book VII.0.1.",
+      "date": "2026-11-06",
+      "affected_entities": [
+        "ilyas-tehrun",
+        "noon-company",
+        "elven-rangers",
+        "arc-blade"
+      ]
+    },
+    {
+      "id": "LN3",
+      "sequence": 62,
+      "kind": "canon",
+      "decision": "The Sareth family is a desert-elf syndicate of Confederacy expatriates in the Arclight Sprawl, running the underlevels' smuggling out of the Cistern Quarter. A member swears by drinking from the family's cup, a criminal echo of the Cupbearers' Oath (VIII.3.7). The family owns an old smuggling railway under the Sprawl, the Sareth line, which predates the Glassline on that side of the city and once carried Confederacy goods under the streets. One of its stops lies under the Lantern Bistro on Lamplight Street, reached by a private lift behind a tiled wall in the kitchen. Its last station, the Deep Station, lay where Hallowell later raised his tower, and Hallowell's people hold that end. The family keeps a helicopter, a long memory for what it has bought, and a cleaner who is never named: the man in white. On the roof of Hallowell Tower he gave the family's answer in its own words: the family was never here tonight. Book V.3.1.",
+      "date": "2026-11-06",
+      "affected_entities": [
+        "sareth-family",
+        "man-in-white",
+        "cistern-quarter",
+        "sareth-line",
+        "lantern-bistro"
+      ]
+    },
+    {
+      "id": "LN4",
+      "sequence": 63,
+      "kind": "canon",
+      "decision": "Auden Hallowell is the son of Perrin Hallowell, who founded Hallowell Arms in A.V. 2212 (VII.4.4), and old enough to remember the stamping presses, which makes the Hallowells elves. He held one of the family's seats on the Lumen Vast board, theirs since the acquisition of A.V. 2301. In A.V. 2321 he was the man behind the Gutter Dumping trade, pushing warehouse-grade pistols into the underlevels at volume through streets the Sareths consider theirs, and to protect the trade he had bought every Eclipsera Constabulary badge between the Sprawl's farm edge and his tower in the Tower District. On one night that year, from an hour before midnight to just past it, the Sareths sent Ilyas Tehrun for him: through six hired men at the farm edge, three Kindling riders on the avenue, a Constabulary checkpoint, Qadir Mell and the Lantern Bistro, the Line's goblins and their keeper, the tower's lobby, and Hallowell's head of security. Auden Hallowell, who never fought, was beheaded in his office; of the game's two endings canon keeps this one (LN1). Hallowell Arms settled the Gutter Dumping affair without admission after his death, and that is the settlement VII.4.4 records. On the roof the family's man in white put out Ilyas's light with a null-rim round (LN5) and sent him over the edge, because a denial is only as good as its loose ends.",
+      "date": "2026-11-06",
+      "affected_entities": [
+        "auden-hallowell",
+        "hallowell-tower",
+        "sareth-family",
+        "ilyas-tehrun",
+        "hallowell-arms"
+      ]
+    },
+    {
+      "id": "LN5",
+      "sequence": 64,
+      "kind": "canon",
+      "decision": "A null-rim round is a single round quenched at a null rim, fired from one pistol of a cased Maben Register Pair (VII.4.5); its voicing climbs as it comes up to charge. It is kin to the Quiet Nail, forged at a null rim (X.6), and to the null zones of the Northern Continuum (V.4). Through a gilded body it takes the null with it: every line of the lattice goes dark, and the null settles in the gilt and stays. The workings fail, the arc-blade becomes nine loose plates that will not lock, any cell wired in near the wearer dies, and the null along his nerves holds him to a man's pace. The Sareths ordered theirs the year Ilyas drank from their cup: thirty years of keeping a way to put out their lamp. Gilt cut away from the body before the null reaches it stays lit, and its light keeps the flesh from turning. Falling into the Pit, Ilyas was caught through the right forearm by a spike on the wall and hung there until his own weight tore the arm out at the shoulder; the arm stayed on the spike, still lit, and half the Pit saw it glowing on the wall. By the time he could climb the stair-streets the spike was bare but for a dark stain and a strip of black cloth.",
+      "date": "2026-11-06",
+      "affected_entities": [
+        "null-rim-round",
+        "ilyas-tehrun",
+        "arc-blade",
+        "maben-atelier"
+      ]
+    },
+    {
+      "id": "LN6",
+      "sequence": 65,
+      "kind": "canon",
+      "decision": "The Pit is Eclipsera's old stone quarry, the one the Sprawl cut its stone from, below the Tower District at the foot of Hallowell Tower: now a slum built down its walls for the people the city has no room for. It keeps four tiers: the Floor; the stair-streets that switch back up the walls, the Lane stair and the Shelf stair; the Shelf, a market on a broad ledge halfway up the wall; and the Rim, under the tower's foot. Osgood Tarr, the Pump King, owns the Pit's only clean pumps and sells water by the bucket. His pump chits, called water paper, pass for money in the Pit; his collectors wear his blue on a rag round the arm and take a water toll on goods at the switchbacks, a chit a bag. The Sump, a bar of boards and tin on the Floor, is Tamm Broadhand's (LN7). The stair-streets keep Eclipsera's street register in small: a choirhouse with its bell, the Mendery's door under a hand stitched across the wrist, a rondel court chalked on bare stone, tracts and the Nightglass pasted up, a numbers board, and on the Shelf stair a silent row with tin cups under an old Hallowell billboard. Ruled texture: each congregation works its own pitch and none coordinates; the silent row sits a flight above the Mendery's door, not outside it, and the GC1 metaplot flag is not raised. Nobody in the Pit calls the Constabulary. Book V.3.3.",
+      "date": "2026-11-06",
+      "affected_entities": [
+        "the-pit",
+        "osgood-tarr",
+        "eclipsera",
+        "hallowell-tower"
+      ]
+    },
+    {
+      "id": "LN7",
+      "sequence": 66,
+      "kind": "canon",
+      "decision": "Tamm Broadhand keeps the Sump. She is an orc of the Tarkesh diaspora whose grandparents came south in the Poisoned River dispersals; her grandfather came out of the Poisoned River one-handed and kept a fish stall in the Pit for forty years, and nobody robbed him twice. She fights with her left hand in her apron pocket and teaches Short Hand (LN9). Dob is a kid who climbs the Pit's walls for scrap and keeps pigeons on the Sump's roof, which he sells to Tamm's kitchen; their hay broke Ilyas's fall. Tamm closed his shoulder with a skillet off the stove, Dob helped her get him inside, and nobody called the Constabulary. Nim Dry-Cup keeps the Sump's pumps running and a pump-parts stall on the Shelf. She is a goblin from the Confederacy duneworks, her taken name is the cup her settlement was never offered, and she knows exactly what his gilt means.",
+      "date": "2026-11-06",
+      "affected_entities": [
+        "tamm-broadhand",
+        "nim-dry-cup",
+        "dob",
+        "the-pit"
+      ]
+    },
+    {
+      "id": "LN8",
+      "sequence": 67,
+      "kind": "canon",
+      "decision": "Every named figure of the night is an elf and every crew human, except the goblins and their keeper. Qadir Mell ran the Lantern Bistro for Hallowell: Ilyas's oldest friend, who drank from the family's cup in the same year and kept the family's stop under the Lantern for decades, until Hallowell bought him. He carried Last Orders, a coral-inlaid greataxe, and fell in the street outside his own front door. Brask and Iyla were his second and his knife, Brask with Reservation, a winged spear with a lavender ribbon, and Iyla with Corkscrew, a wavy dagger. Orrin, Hesk and Odile were the Lantern's head chef, sous-chef and quickest knife, with Butcher's Bill, Cold Cut and Eighty-Six. Sable headed Hallowell Tower's lobby security over three human guards and carried Clearance, a silver-hilted longsword. Kade was Hallowell's head of security and carried Severance, a black longsword with a crimson inlay and hawk-wing quillons. Ixet, a lizard-folk exile from the Mountain Sultanate, kept the Line goblins at the Deep Station and fought with a cleaver-glaive and his tail. The goblins are a feral band trapped in the Northern Continuum's shallows and sold south, nested now in the disused tunnels of the Sareth line: a population and not the species (TR2). The six hired men came from the Sprawl's farm edge. The riders came off a Kindling pit-fight circuit, armed from Hallowell's dumped stock, and never broke off as their numbers fell, which is the Kindling's mark. The checkpoint was the Eclipsera Constabulary of the Tower District, on Hallowell's payroll.",
+      "date": "2026-11-06",
+      "affected_entities": [
+        "qadir-mell",
+        "kade",
+        "sable",
+        "ixet",
+        "line-goblins",
+        "northern-feral-goblins",
+        "mountain-sultanate",
+        "lantern-bistro"
+      ]
+    },
+    {
+      "id": "LN9",
+      "sequence": 68,
+      "kind": "canon",
+      "decision": "Short Hand is a one-handed knife style. Caliphate soldiers who lost hands and arms in the War of the Poisoned River (A.V. 1950 to 1983) came south in the dispersals with no trade but fighting, and built a style out of what they had left. The Tarkesh veterans gave it its name: short a hand, and short with the knife. Its stance is low, the weight forward, the knife tight to the chest, the steps short and chopping and never crossed. The empty side is used, not hidden. In the Hinge it turns into a blow and takes it glancing on the shoulder, and the knife ends inside the man's reach; the Wrist toll cuts the hand that reaches; the Short ladder is a rising stab from the low stance, under the guard; the Blind-side check drives the empty shoulder into a man who is not set; and the Ankle hook puts a foot behind his ankle while the knife threatens high. Its doctrine: your feet are your other hand. Tamm Broadhand learned it on the back step of her grandfather's fish stall. Book VII.5.",
+      "date": "2026-11-06",
+      "affected_entities": [
+        "short-hand",
+        "tamm-broadhand",
+        "caliphate-iron-roots"
+      ]
+    },
+    {
+      "id": "LN10",
+      "sequence": 69,
+      "kind": "canon",
+      "decision": "Three further styles from the build. The Wire drill is Noon Company's drill on the Confederacy's border wire in the 2270s, a line held across open sand to keep the wells: the blade out on the line between the Ranger and the man, the feet wide and low, every cut thrown whole from the shoulder and carried through, and the finish held a beat before the blade comes back onto the line. It was drilled for a gilded body and does not work without the gilt. Its master stroke, the Long count, is a lunge the gilt carries across the sand. Its doctrine: hold the line; the wire does not go to the man, he comes to it. The Sareth cut is thirty years of Eclipsera enforcement worn into one man's habits: short windups, a small follow-through, a quick return to a tight guard, and a glance round the room after every kill. Its doctrine: do the job, and nothing past it. The Order drill is the baton course every licensed guard in Eclipsera has sat: the Eclipsera Constabulary's public-order course, cut to forty hours and sold to the city's security firms, with the hand-to-hand of Crown Territorial Levy basic bolted on by the old Levies who teach it. Generic, not elite: formally trained civilians. The guard stands upright and side-on, a steel expandable baton at the shoulder and the free hand up in front, palm out, which the course calls the fence. Blows go to the arms and the legs, and the head is a last resort. Partners in reach cover each other, and a man whose partners are down is out of the book. The course ends at the baton push and the arm bar, and nobody masters it. Its doctrine: keep the gap, keep your partner, and go home. Hallowell Tower's lobby guards fought in it on the Long Night once their guns ran dry. Book VII.5.",
+      "date": "2026-11-06",
+      "affected_entities": [
+        "wire-drill",
+        "sareth-cut",
+        "order-drill",
+        "noon-company",
+        "territorial-levy"
+      ]
+    },
+    {
+      "id": "LN11",
+      "sequence": 70,
+      "kind": "provisional",
+      "decision": "PROVISIONAL: the rest of Act I, from the author's synopsis, filed as proposed [P] until the build carries it. The scrap arm: Nim Dry-Cup builds Ilyas an arm that holds no charge, because the null kills any cell wired in near him: tension cables, springs, a ratchet hand, and drive gears pulled from recalled Hallowell Doorbell turrets dumped in the Pit (compare the Unstrung, VII.4.5). It grips, braces, throws and hits like a hammer; it cannot hold a blade with any finesse, it jams, and it has to be wound. The Pump King's prize: on the night of the fall Tarr's men pried the lit arm off the spike, and it goes on sale in the Pit as the only intact Noon lattice anyone can buy; Ilyas goes through Tarr's collectors on the stair-streets and his crew in the pumphouse, and takes it back. The joining: Nim bridges the lit lattice in the arm to the dark lattice in the shoulder with gold wire drawn from the arc-blade's gilded edges, and before she closes it the digger and the landholder drink first, together, from one cup: Nim and Ilyas share water from Tarr's own pump, the oath the Charter broke. The arm's light runs across the join and relights him line by line, though the old burned-out lines stay dark; his speed and his workings come back, and the arc-blade locks again. The scrap arm goes up on the wall over the Sump's bar, and Act II begins with the man in white.",
+      "date": "2026-11-06",
+      "affected_entities": [
+        "scrap-arm",
+        "nim-dry-cup",
+        "osgood-tarr",
+        "ilyas-tehrun",
+        "man-in-white"
+      ]
     }
   ],
   "rulings_legacy_strings": {
@@ -4864,6 +5520,18 @@
       {
         "date": "2000+ A.V.",
         "event": "The Rifted North; rise of Erevale"
+      },
+      {
+        "date": "2274–2277 A.V.",
+        "event": "Noon Company: forty Ranger volunteers gilded; most dead of Mana Burn by 2277, the deaths filed with the Overdrive recalls and the pattern books sealed [R]"
+      },
+      {
+        "date": "2290 A.V.",
+        "event": "Ilyas Tehrun walks out of the Rangers, the year of the Confederacy's statute against selling its edge, and sells his to the Sareths [R]"
+      },
+      {
+        "date": "2321 A.V.",
+        "event": "The Long Night: the Sareths send Ilyas Tehrun up Hallowell Tower; Auden Hallowell beheaded; Ilyas shot off the roof into the Pit [R]"
       },
       {
         "date": "2325 A.V.",
